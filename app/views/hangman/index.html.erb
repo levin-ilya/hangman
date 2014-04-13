@@ -1,55 +1,70 @@
-
-
-<div>
-  Won: <div id="won"><%= current_player.Wins %></div> Lost:<div id="lost"><%= current_player.Losses %></div>
-</div>
-
+<ul id="outerScore" class="breadcrumbs">
+    <li>Your stats</li>
+    <li id="win">Won: <%= current_player.Wins %></li>
+    <li id="lost">Lost: <%= current_player.Losses %></li>
+</ul>
 <div id="mainGame">
   <!-- Image found here: http://top.trnd.com/category/computerinternet/page/40/ -->
-  <img id="hangmanImage" src="assets/10.png" >
-  <label>Moves Left:</label><div id="movesleft"><%= @hangman.movesLeft %></div>
+  <div id="outerHangmanImage">
+    <img id="hangmanImage" class="thinBorder" src="assets/10.png" >
+  </div>
+
+  <ul id="movesLeft" class="breadcrumbs">
+    <li>Moves Left</li>
+    <li><span id="movesleft"><%= @hangman.movesLeft %></span></li>
+  </ul>
   <div id="maskedWord"><%= @hangman.maskedWord %></div>
   <div id="alphabet">
-    <div id='a'>A</div>
-    <div id='b'>B</div>
-    <div id='c'>C</div>
-    <div id='d'>D</div>
-    <div id='e'>E</div>
-    <div id='f'>F</div>
-    <div id='g'>G</div>
-    <div id='h'>H</div>
-    <div id='i'>I</div>
-    <div id='j'>J</div>
-    <div id='k'>K</div>
-    <div id='l'>L</div>
-    <div id='m'>M</div>
-    <div id='n'>N</div>
-    <div id='o'>O</div>
-    <div id='p'>P</div>
-    <div id='q'>Q</div>
-    <div id='r'>R</div>
-    <div id='s'>S</div>
-    <div id='t'>T</div>
-    <div id='u'>U</div>
-    <div id='v'>V</div>
-    <div id='w'>W</div>
-    <div id='x'>X</div>
-    <div id='y'>Y</div>
-    <div id='z'>Z</div>
+    <table>
+      <tr>
+        <td>
+          <div id='a' class="letter">A</div>
+          <div id='b' class="letter">B</div>
+          <div id='c' class="letter">C</div>
+          <div id='d' class="letter">D</div>
+          <div id='e' class="letter">E</div>
+          <div id='f' class="letter">F</div>
+          <div id='g' class="letter">G</div>
+          <div id='h' class="letter">H</div>
+          <div id='i' class="letter">I</div>
+          <div id='j' class="letter">J</div>
+          <div id='k' class="letter">K</div>
+          <div id='l' class="letter">L</div>
+          <div id='m' class="letter">M</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id='n' class="letter">N</div>
+          <div id='o' class="letter">O</div>
+          <div id='p' class="letter">P</div>
+          <div id='q' class="letter">Q</div>
+          <div id='r' class="letter">R</div>
+          <div id='s' class="letter">S</div>
+          <div id='t' class="letter">T</div>
+          <div id='u' class="letter">U</div>
+          <div id='v' class="letter">V</div>
+          <div id='w' class="letter">W</div>
+          <div id='x' class="letter">X</div>
+          <div id='y' class="letter">Y</div>
+          <div id='z'class="letter">Z</div>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
 
 <div id="winnerDisplay" class="reveal-modal" data-reveal>
   <h2>Winner</h2>
   <p class="lead">You won!</p>
-  <p>Congrats, you figured out the word!</p>
+  <p>Congrats, you figured it out! Play again to improve your score.</p>
   <%= link_to('Start a New Game',hangman_newgame_path) %>
 </div>
 
 <div id="lostDisplay" class="reveal-modal" data-reveal>
   <h2>Bummer</h2>
   <p class="lead">You lost!</p>
-  <p>Sorry your lost!</p>
+  <p>Try Again!</p>
   <%= link_to('Start a New Game',hangman_newgame_path) %>
   <a class="close-reveal-modal">&#215;</a>
 </div>

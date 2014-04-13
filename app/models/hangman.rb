@@ -9,6 +9,7 @@ class Hangman
     @movesLeft -= 1
     if @movesLeft == 0
       @status='lost'
+      updatePlayerScore()
     end
   end
 
@@ -16,6 +17,7 @@ class Hangman
      updateMaskedWord(letter)
      if @maskedWord==@answer
        @status='winner'
+       updatePlayerScore()
      end
   end
 
@@ -43,7 +45,7 @@ class Hangman
 
   def initialize(dictionary)
     @answer = dictionary.getRandomWord
-    @maskedWord = '*' * @answer.length
+    @maskedWord = '_' * @answer.length
     @movesLeft = 10
     @status = 'playing' # possible values: playing || lost || winner
     @lettersLeft = Set.new('a'..'z')
@@ -65,9 +67,6 @@ class Hangman
       @lettersLeft.delete(letter)
       # check if letter is in the answer
       checkLetter(letter)
-    end
-    if status == "winner" || status == "lost"
-      updatePlayerScore()
     end
   end
 

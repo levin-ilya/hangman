@@ -22,8 +22,7 @@ class HangmanController < ApplicationController
   end
 
   def topscore
-    @topScore = Score.select("player_id,sum(win) as Wins,sum(lost) as Losses")
-    render :text => @topScore.inspect
+    @topScores = Score.topScores
   end
 
 end

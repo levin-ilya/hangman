@@ -39,14 +39,14 @@ class Hangman_test < ActiveSupport::TestCase
   end
 
   def test_InitializeState
-    assert @hangman.maskedWord == "***"
+    assert @hangman.maskedWord == "___"
     assert @hangman.movesLeft == 10
     assert @hangman.status == 'playing'
   end
 
   def test_GuessWrongLetter
     @hangman.guessLetter('z')
-    assert @hangman.maskedWord == "***"
+    assert @hangman.maskedWord == "___"
     assert @hangman.movesLeft == 9
     assert @hangman.status == 'playing'
   end
@@ -54,7 +54,7 @@ class Hangman_test < ActiveSupport::TestCase
   def test_GuessWrongLetterTwice
     @hangman.guessLetter('z')
     @hangman.guessLetter('z')
-    assert @hangman.maskedWord == "***"
+    assert @hangman.maskedWord == "___"
     assert @hangman.movesLeft == 9
     assert @hangman.status == 'playing'
   end
@@ -70,7 +70,7 @@ class Hangman_test < ActiveSupport::TestCase
     @hangman.guessLetter('s')
     @hangman.guessLetter('r')
     @hangman.guessLetter('q')
-    assert @hangman.maskedWord == "***"
+    assert @hangman.maskedWord == "___"
     assert @hangman.movesLeft == 0
     assert @hangman.status == 'lost'
   end
@@ -87,14 +87,14 @@ class Hangman_test < ActiveSupport::TestCase
     @hangman.guessLetter('r')
     @hangman.guessLetter('q')
     @hangman.guessLetter('p')
-    assert @hangman.maskedWord == "***"
+    assert @hangman.maskedWord == "___"
     assert @hangman.movesLeft == 0
     assert @hangman.status == 'lost'
   end
 
   def test_GuessRightLetter1
     @hangman.guessLetter('d')
-    assert @hangman.maskedWord == "d**"
+    assert @hangman.maskedWord == "d__"
     assert @hangman.movesLeft == 10
     assert @hangman.status == 'playing'
   end
@@ -102,7 +102,7 @@ class Hangman_test < ActiveSupport::TestCase
   def test_GuessRightLetter2
     @hangman.guessLetter('d')
     @hangman.guessLetter('g')
-    assert @hangman.maskedWord == "d*g"
+    assert @hangman.maskedWord == "d_g"
     assert @hangman.movesLeft == 10
     assert @hangman.status == 'playing'
   end
@@ -139,7 +139,7 @@ class Hangman_test < ActiveSupport::TestCase
     @dictionary.path =  File.expand_path('../../../test/data/WordWith2SameLetters.txt', __FILE__)
     @hangman = Hangman.new(@dictionary)
     @hangman.guessLetter('i')
-    assert @hangman.maskedWord=='**i*i**'
+    assert @hangman.maskedWord=='__i_i__'
   end
 
   def test_PlayerScoreWin

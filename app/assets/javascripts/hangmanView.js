@@ -5,7 +5,7 @@
 zenBuilder.HangmanView = {
   init: function () {
       //setup view
-      $("#alphabet > div").click(this.guessLetter);
+      $(".letter").click(this.guessLetter);
 
   },
   updateView: function (data,letter){
@@ -19,6 +19,7 @@ zenBuilder.HangmanView = {
 
       // remove listener
       $(letterSelector).unbind("click");
+      $(letterSelector)[0].className = "usedLetter"
       $(letterSelector).css("color:gray");
       if(status=="winner"){
           $('#winnerDisplay').foundation('reveal', 'open');

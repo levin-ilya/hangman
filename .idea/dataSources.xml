@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="680747588">
+    <data-source source="LOCAL" name="Rails hangman: development" uuid="4d70d57c-9e8c-4156-a5e2-cbf490f13b40">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/hangman_dev</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc0dfcbdfc9dfc1dfc3dfc4dfdedfc2dfcfdfc8dfcbdfc9dfc1</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails hangman: test" uuid="5116cb0d-0993-4161-a96c-34ee6515c822">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/hangman_test</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc0dfcbdfc9dfc1dfc3dfc4dfdedfc2dfcfdfc8dfcbdfc9dfc1</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails hangman: production" uuid="5e642623-a238-4679-88ea-322797054cd8">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/hangman_prod</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfc0dfcbdfc9dfc1dfc3dfc4dfdedfc2dfcfdfc8dfcbdfc9dfc1</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

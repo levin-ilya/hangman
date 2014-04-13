@@ -14,3 +14,101 @@
  *= require_tree .
  *= require foundation
  */
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.login {
+    width: 250px;
+
+}
+
+.thinBorder{
+    border: 1px lightgray solid;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.menu{
+    width: 400px;
+}
+
+.outerMenu {
+    width: 400px;
+}
+
+#gameTitle {
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#outerScore{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    text-align: center;
+    width: 237px;
+}
+
+#win{
+
+}
+
+#lost{
+
+}
+
+#outerHangmanImage{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.letter{
+    display: inline;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+}
+
+#alphabet{
+    width: 195px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.letter:hover{
+    cursor: pointer;
+    border: 1px darkgray solid;
+}
+
+.usedLetter{
+    display: inline;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    text-decoration: line-through;
+    color: navajowhite;
+}
+
+#maskedWord{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 40px;
+    margin: 0 auto 20px;
+    width: 30px;
+    letter-spacing: 2px;
+}
+
+#movesLeft{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 150px;
+}
+
+#topScore{
+    width: 364px;
+    margin-left: auto;
+    margin-right: auto;
+}

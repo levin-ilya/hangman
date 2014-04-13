@@ -9,18 +9,20 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-  The Hangman Game
+
   <% if player_signed_in? %>
-
-
-      <ul>
-        <li><%= link_to("New Game",hangman_newgame_path) %></li>
-        <li><%= link_to("Top Score",hangman_topscore_path) %></li>
-        <li><%= current_player.email %> (<%= link_to('Logout', destroy_player_session_path) %>)</li>
-      </ul>
+      <h3 id="gameTitle">The Hangman Game</h3>
+      <div class="outerMenu center">
+          <ul class="breadcrumbs menu">
+            <li><%= link_to("New Game",hangman_newgame_path) %></li>
+            <li><%= link_to("Top Score",hangman_topscore_path) %></li>
+            <li><%= current_player.email %> (<%= link_to('Logout', destroy_player_session_path) %>)</li>
+          </ul>
+      </div>
   <%end%>
 
 
