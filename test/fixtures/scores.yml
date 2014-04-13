@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 1000
+  win: 1
+  lost: 0
+
+two:
+  player_id: 1000
+  win: 0
+  lost: 1
+
+three:
+  player_id: 1000
+  win: 1
+  lost: 0
+
+four:
+  player_id: 1000
+  win: 0
+  lost: 1

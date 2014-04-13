@@ -1,0 +1,56 @@
+
+
+<div>
+  Won: <div id="won"><%= current_player.Wins %></div> Lost:<div id="lost"><%= current_player.Losses %></div>
+</div>
+
+<div id="mainGame">
+  <!-- Image found here: http://top.trnd.com/category/computerinternet/page/40/ -->
+  <img id="hangmanImage" src="assets/10.png" >
+  <label>Moves Left:</label><div id="movesleft"><%= @hangman.movesLeft %></div>
+  <div id="maskedWord"><%= @hangman.maskedWord %></div>
+  <div id="alphabet">
+    <div id='a'>A</div>
+    <div id='b'>B</div>
+    <div id='c'>C</div>
+    <div id='d'>D</div>
+    <div id='e'>E</div>
+    <div id='f'>F</div>
+    <div id='g'>G</div>
+    <div id='h'>H</div>
+    <div id='i'>I</div>
+    <div id='j'>J</div>
+    <div id='k'>K</div>
+    <div id='l'>L</div>
+    <div id='m'>M</div>
+    <div id='n'>N</div>
+    <div id='o'>O</div>
+    <div id='p'>P</div>
+    <div id='q'>Q</div>
+    <div id='r'>R</div>
+    <div id='s'>S</div>
+    <div id='t'>T</div>
+    <div id='u'>U</div>
+    <div id='v'>V</div>
+    <div id='w'>W</div>
+    <div id='x'>X</div>
+    <div id='y'>Y</div>
+    <div id='z'>Z</div>
+  </div>
+</div>
+
+<div id="winnerDisplay" class="reveal-modal" data-reveal>
+  <h2>Winner</h2>
+  <p class="lead">You won!</p>
+  <p>Congrats, you figured out the word!</p>
+  <%= link_to('Start a New Game',hangman_newgame_path) %>
+</div>
+
+<div id="lostDisplay" class="reveal-modal" data-reveal>
+  <h2>Bummer</h2>
+  <p class="lead">You lost!</p>
+  <p>Sorry your lost!</p>
+  <%= link_to('Start a New Game',hangman_newgame_path) %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+

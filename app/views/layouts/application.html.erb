@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Hangman Game</title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  The Hangman Game
+  <% if player_signed_in? %>
+
+
+      <ul>
+        <li><%= link_to("New Game",hangman_newgame_path) %></li>
+        <li><%= link_to("Top Score",hangman_topscore_path) %></li>
+        <li><%= current_player.email %> (<%= link_to('Logout', destroy_player_session_path) %>)</li>
+      </ul>
+  <%end%>
+
+
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+  <% end %>
+    <%= yield %>
+    <script>
+      (function (){
+          window.zenBuilder = {};
+      })();
+    </script>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
