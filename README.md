@@ -14,3 +14,7 @@ Installation and setup
  -   rails s (start rails dev server)
 
 
+Design
+![Design](https://raw.githubusercontent.com/levin-ilya/hangman/master/HangmanDesign.jpeg)
+
+
