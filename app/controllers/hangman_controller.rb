@@ -3,7 +3,7 @@ class HangmanController < ApplicationController
 
   def index
     @dictionary = Dictionary.instance
-    @dictionary.path =  File.expand_path('../../../test/data/3LetterWord.txt', __FILE__)
+    @dictionary.path =  File.expand_path('../../../app/assets/data/bigList.txt', __FILE__)
     @hangman = Hangman.new(@dictionary)
     @hangman.player = current_player
     session[:game] = @hangman
