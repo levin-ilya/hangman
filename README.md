@@ -2,8 +2,11 @@ hangman
 =======
 
 Requirements
+ - MYSQL
+ - Ruby on Rails
 
 Installation
+ - 
 
 
 Test
