@@ -25,11 +25,10 @@
       </div>
   <%end%>
 
-
+    <%= yield %>
   <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
   <% end %>
-    <%= yield %>
     <script>
       (function (){
           window.zenBuilder = {};
