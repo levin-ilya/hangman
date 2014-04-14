@@ -51,6 +51,7 @@ class Hangman
     @lettersLeft = Set.new('a'..'z')
   end
 
+  # method needed for JSON Serializer
   def attributes
     {'answer' => nil,'maskedWord' => nil,'movesLeft' => nil,'status' => nil,'lettersLeft' => nil}
   end

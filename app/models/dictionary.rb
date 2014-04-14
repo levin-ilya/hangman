@@ -4,7 +4,7 @@ class Dictionary
   private
   attr_accessor :words,:path
 
-
+  # Loads the words for a text file
   def loadWords
     @words = Array.new
     file = File.new(@path, "rb")
@@ -15,7 +15,7 @@ class Dictionary
   end
 
   public
-
+  # sets the path
   def path=(value)
     @path=value
     if !@path.nil?
@@ -23,6 +23,7 @@ class Dictionary
     end
   end
 
+  # selects a random word
   def getRandomWord
      if @path.nil?
        raise 'Path to dictionary needs to be set'
