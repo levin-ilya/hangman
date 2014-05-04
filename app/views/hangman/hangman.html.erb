@@ -1,0 +1,55 @@
+<ul id="outerScore" class="breadcrumbs">
+    <li>Your stats</li>
+    <li id="win">Won: <%= current_player.Wins %></li>
+    <li id="lost">Lost: <%= current_player.Losses %></li>
+</ul>
+<div id="mainGame" ng-controller="HangmanController">
+  <!-- Image found here: http://top.trnd.com/category/computerinternet/page/40/ -->
+  <div id="outerHangmanImage">
+    <img id="hangmanImage" class="thinBorder" ng-src="../assets/{{hangman.movesLeft || 10}}.png" >
+  </div>
+
+  <ul id="movesLeft" class="breadcrumbs">
+    <li>Moves Left</li>
+    <li><span id="movesleft">{{hangman.movesLeft}}</span></li>
+  </ul>
+  <div id="maskedWord">{{hangman.maskedWord}}</div>
+  <div id="alphabet">
+    <table>
+      <tr>
+        <td>
+          <div id='a' class="letter" ng-click="guessLetter($event)">A</div>
+          <div id='b' class="letter" ng-click="guessLetter($event)">B</div>
+          <div id='c' class="letter" ng-click="guessLetter($event)">C</div>
+          <div id='d' class="letter" ng-click="guessLetter($event)">D</div>
+          <div id='e' class="letter" ng-click="guessLetter($event)">E</div>
+          <div id='f' class="letter" ng-click="guessLetter($event)">F</div>
+          <div id='g' class="letter" ng-click="guessLetter($event)">G</div>
+          <div id='h' class="letter" ng-click="guessLetter($event)">H</div>
+          <div id='i' class="letter" ng-click="guessLetter($event)">I</div>
+          <div id='j' class="letter" ng-click="guessLetter($event)">J</div>
+          <div id='k' class="letter" ng-click="guessLetter($event)">K</div>
+          <div id='l' class="letter" ng-click="guessLetter($event)">L</div>
+          <div id='m' class="letter" ng-click="guessLetter($event)">M</div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id='n' class="letter" ng-click="guessLetter($event)">N</div>
+          <div id='o' class="letter" ng-click="guessLetter($event)">O</div>
+          <div id='p' class="letter" ng-click="guessLetter($event)">P</div>
+          <div id='q' class="letter" ng-click="guessLetter($event)">Q</div>
+          <div id='r' class="letter" ng-click="guessLetter($event)">R</div>
+          <div id='s' class="letter" ng-click="guessLetter($event)">S</div>
+          <div id='t' class="letter" ng-click="guessLetter($event)">T</div>
+          <div id='u' class="letter" ng-click="guessLetter($event)">U</div>
+          <div id='v' class="letter" ng-click="guessLetter($event)">V</div>
+          <div id='w' class="letter" ng-click="guessLetter($event)">W</div>
+          <div id='x' class="letter" ng-click="guessLetter($event)">X</div>
+          <div id='y' class="letter" ng-click="guessLetter($event)">Y</div>
+          <div id='z'class="letter" ng-click="guessLetter($event)">Z</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

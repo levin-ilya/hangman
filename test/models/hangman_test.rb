@@ -99,6 +99,11 @@ class Hangman_test < ActiveSupport::TestCase
     assert @hangman.status == 'playing'
   end
 
+  def test_GuessLetterTestUsedLetters
+    @hangman.guessLetter('d')
+    assert @hangman.lettersUsed.include?('d')
+  end
+
   def test_GuessRightLetter2
     @hangman.guessLetter('d')
     @hangman.guessLetter('g')

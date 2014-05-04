@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="hangmanApp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,32 +8,44 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body ng-cloak>
 
   <% if player_signed_in? %>
       <h3 id="gameTitle">The Hangman Game</h3>
       <div class="outerMenu center">
-          <ul class="breadcrumbs menu">
-            <li><%= link_to("New Game",hangman_newgame_path) %></li>
-            <li><%= link_to("Top Score",hangman_topscore_path) %></li>
+          <ul class="breadcrumbs menu" ng-controller="MenuController">
+            <li><a href="#" ng-click="newGame()">New Game</a></li>
+            <li><%= link_to("Top Score","#topScore") %></li>
             <li><%= current_player.email %> (<%= link_to('Logout', destroy_player_session_path) %>)</li>
           </ul>
       </div>
   <%end%>
-
-    <%= yield %>
+  <div ng-view></div>
   <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
   <% end %>
-    <script>
-      (function (){
-          window.zenBuilder = {};
-      })();
-    </script>
-    <%= javascript_include_tag "application" %>
+
+  <div id="winnerDisplay" class="reveal-modal" data-reveal ng-controller="MenuController">
+    <h2>Winner</h2>
+    <p class="lead">You are a winner!</p>
+    <p>Congrats, you figured it out! Play again to improve your score.</p>
+    <a href="#" ng-click="newGame()">Start a New Game</a>
+  </div>
+
+  <div id="lostDisplay" class="reveal-modal" data-reveal ng-controller="MenuController">
+    <h2>Bummer.</h2>
+    <p class="lead">You lost!</p>
+    <p>Try Again!</p>
+    <a href="#" ng-click="newGame()">Start a New Game</a>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  <script>
+      $(document).foundation();
+  </script>
   </body>
 </html>

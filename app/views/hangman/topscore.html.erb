@@ -1,4 +1,4 @@
-<div id="topScore">
+<div id="topScore" ng-controller="topScore" >
     <table>
       <thead>
         <tr>
@@ -9,14 +9,12 @@
         </tr>
       </thead>
       <tbody>
-      <% @topScores.each_with_index do |score,index| %>
-        <tr>
-          <td><%= index+1 %></td>
-          <td><%= hideEmail(score[0]) %></td>
-          <td><%= score[1] %></td>
-          <td><%= score[2] %></td>
+        <tr ng-repeat="score in topScore">
+          <td>{{ $index+1 }}</td>
+          <td>{{score[0]}}</td>
+          <td>{{score[1]}}</td>
+          <td>{{score[2]}}</td>
         </tr>
-      <% end %>
       </tbody>
     </table>
 </div>

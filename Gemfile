@@ -6,6 +6,9 @@ gem 'rails', '4.0.1'
 # user management
 gem 'devise'
 
+# angular - JS MVC framework
+gem 'angularjs-rails'
+
 # move session data to the database
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
@@ -28,6 +31,12 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+# Javascript Testing MVC
+group :development, :test do
+  gem 'teaspoon'
+  gem 'phantomjs'
+end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -3,7 +3,7 @@ class Hangman
 
   private
   attr_accessor :answer
-  attr_writer :maskedWord,:movesLeft,:status,:lettersLeft
+  attr_writer :maskedWord,:movesLeft,:status,:lettersLeft,:lettersUsed
 
   def guessedWrong
     @movesLeft -= 1
@@ -40,7 +40,7 @@ class Hangman
 
 
   public
-  attr_reader :maskedWord,:movesLeft,:player,:status,:lettersLeft
+  attr_reader :maskedWord,:movesLeft,:player,:status,:lettersLeft,:lettersUsed
   attr_writer :player
 
   def initialize(dictionary)
@@ -49,11 +49,12 @@ class Hangman
     @movesLeft = 10
     @status = 'playing' # possible values: playing || lost || winner
     @lettersLeft = Set.new('a'..'z')
+    @lettersUsed = Set.new();
   end
 
   # method needed for JSON Serializer
   def attributes
-    {'answer' => nil,'maskedWord' => nil,'movesLeft' => nil,'status' => nil,'lettersLeft' => nil}
+    {'answer' => nil,'maskedWord' => nil,'movesLeft' => nil,'status' => nil,'lettersUsed' => nil}
   end
 
 
@@ -63,9 +64,9 @@ class Hangman
     if letter.length > 1
       raise 'Input must be a letter'
       # make sure the letter hasn't be used yet
-    elsif @lettersLeft.include?(letter) && @status=='playing'
-      #remove it from letters left
-      @lettersLeft.delete(letter)
+    elsif !@lettersUsed.include?(letter) && @status=='playing'
+      #add it from letters used
+      @lettersUsed.add(letter)
       # check if letter is in the answer
       checkLetter(letter)
     end
