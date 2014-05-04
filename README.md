@@ -10,7 +10,8 @@ Installation and setup
  -   bundle install (install any missing gems)
  -   rake db:create (create database)
  -   rake db:migrate (update database)
- -   rake test (run unit tests)
+ -   rake test (run Rails unit tests)
+ -   rake teaspoon (runs Javascript test)
  -   rails s (start rails dev server)
 
 
