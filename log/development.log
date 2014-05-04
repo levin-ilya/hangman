@@ -35093,3 +35093,1232 @@ Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 3.0ms)
 
 
 Started GET "/assets/0.png" for 127.0.0.1 at 2014-04-13 19:41:56 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-14 06:31:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (12.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HangmanController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (11.3ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = 'bcf7542c2dd95f6e3f1e9dac86141184' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.7ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  SELECT SUM(`scores`.`win`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2
+  [1m[36m (0.5ms)[0m  [1mSELECT SUM(`scores`.`lost`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2[0m
+  Rendered hangman/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 861ms (Views: 501.7ms | ActiveRecord: 32.9ms)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (17.5ms)[0m  [1mUPDATE `sessions` SET `data` = 'BAh7CEkiG3dhcmRlbi51c2VyLnBsYXllci5rZXkGOgZFVFsHWwZpB0kiIiQy\nYSQxMCRPNS94ZWxwVGFFZlhzdVZSclFoLkNPBjsAVEkiCWdhbWUGOwBGbzoM\nSGFuZ21hbgs6DEBhbnN3ZXIiDHBpb25lZXI6EEBtYXNrZWRXb3JkSSIMX19f\nX19fXwY7AFQ6D0Btb3Zlc0xlZnRpDzoMQHN0YXR1c0kiDHBsYXlpbmcGOwBU\nOhFAbGV0dGVyc0xlZnRvOghTZXQGOgpAaGFzaHsfSSIGYQY7AFRUSSIGYgY7\nAFRUSSIGYwY7AFRUSSIGZAY7AFRUSSIGZQY7AFRUSSIGZgY7AFRUSSIGZwY7\nAFRUSSIGaAY7AFRUSSIGaQY7AFRUSSIGagY7AFRUSSIGawY7AFRUSSIGbAY7\nAFRUSSIGbQY7AFRUSSIGbgY7AFRUSSIGbwY7AFRUSSIGcAY7AFRUSSIGcQY7\nAFRUSSIGcgY7AFRUSSIGcwY7AFRUSSIGdAY7AFRUSSIGdQY7AFRUSSIGdgY7\nAFRUSSIGdwY7AFRUSSIGeAY7AFRUSSIGeQY7AFRUSSIGegY7AFRUOgxAcGxh\neWVybzoLUGxheWVyFjoQQGF0dHJpYnV0ZXN7EkkiB2lkBjsAVGkHSSIKZW1h\naWwGOwBUSSIXaWx5YTExMTNAZ21haWwuY29tBjsAVEkiF2VuY3J5cHRlZF9w\nYXNzd29yZAY7AFRJIkEkMmEkMTAkTzUveGVscFRhRWZYc3VWUnJRaC5DT2Rq\nQnhSakhTNzEub1ZXS1ljMTNHLi5iSWIwbFBtbW0GOwBUSSIZcmVzZXRfcGFz\nc3dvcmRfdG9rZW4GOwBUMEkiG3Jlc2V0X3Bhc3N3b3JkX3NlbnRfYXQGOwBU\nMEkiGHJlbWVtYmVyX2NyZWF0ZWRfYXQGOwBUMEkiEnNpZ25faW5fY291bnQG\nOwBUaQxJIhdjdXJyZW50X3NpZ25faW5fYXQGOwBUSXU6CVRpbWUNw40cwAAA\nYM8GOgl6b25lSSIIVVRDBjsAVEkiFGxhc3Rfc2lnbl9pbl9hdAY7AFRJdTsR\nDcONHMAAAADBBjsSSSIIVVRDBjsAVEkiF2N1cnJlbnRfc2lnbl9pbl9pcAY7\nAFRJIg4xMjcuMC4wLjEGOwBUSSIUbGFzdF9zaWduX2luX2lwBjsAVEkiDjEy\nNy4wLjAuMQY7AFRJIg9jcmVhdGVkX2F0BjsAVEl1OxENio0cwAAA0LIGOxJJ\nIghVVEMGOwBUSSIPdXBkYXRlZF9hdAY7AFRJdTsRDcONHMAAAGDPBjsSSSII\nVVRDBjsAVDobQGNvbHVtbl90eXBlc19vdmVycmlkZTA6EkBjb2x1bW5fdHlw\nZXN7EkkiB2lkBjsAVG86PEFjdGl2ZVJlY29yZDo6Q29ubmVjdGlvbkFkYXB0\nZXJzOjpNeXNxbDJBZGFwdGVyOjpDb2x1bW4TOgxAc3RyaWN0VDoPQGNvbGxh\ndGlvbjA6C0BleHRyYUkiE2F1dG9faW5jcmVtZW50BjsAVDoKQG5hbWVJIgdp\nZAY7AFQ6DkBzcWxfdHlwZUkiDGludCgxMSkGOwBUOgpAbnVsbEY6C0BsaW1p\ndGkJOg9AcHJlY2lzaW9uMDoLQHNjYWxlMDoKQHR5cGU6DGludGVnZXI6DUBk\nZWZhdWx0MDoWQGRlZmF1bHRfZnVuY3Rpb24wOg1AcHJpbWFyeVQ6C0Bjb2Rl\ncjBJIgplbWFpbAY7AFRvOxUTOxZUOxdJIhR1dGY4X3VuaWNvZGVfY2kGOwBU\nOxhJIgAGOwBUOxlJIgplbWFpbAY7AFQ7GkkiEXZhcmNoYXIoMjU1KQY7AFQ7\nG0Y7HGkB/zsdMDseMDsfOgtzdHJpbmc7IUkiAAY7AFQ7IjA7I0Y7JDBJIhdl\nbmNyeXB0ZWRfcGFzc3dvcmQGOwBUbzsVEzsWVDsXSSIUdXRmOF91bmljb2Rl\nX2NpBjsAVDsYSSIABjsAVDsZSSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVDsa\nSSIRdmFyY2hhcigyNTUpBjsAVDsbRjscaQH/Ox0wOx4wOx87JTshSSIABjsA\nVDsiMDsjRjskMEkiGXJlc2V0X3Bhc3N3b3JkX3Rva2VuBjsAVG87FRM7FlQ7\nF0kiFHV0ZjhfdW5pY29kZV9jaQY7AFQ7GEkiAAY7AFQ7GUkiGXJlc2V0X3Bh\nc3N3b3JkX3Rva2VuBjsAVDsaSSIRdmFyY2hhcigyNTUpBjsAVDsbVDscaQH/\nOx0wOx4wOx87JTshMDsiMDsjRjskMEkiG3Jlc2V0X3Bhc3N3b3JkX3NlbnRf\nYXQGOwBUbzo9QWN0aXZlUmVjb3JkOjpBdHRyaWJ1dGVNZXRob2RzOjpUaW1l\nWm9uZUNvbnZlcnNpb246OlR5cGUGOgxAY29sdW1ubzsVEzsWVDsXMDsYSSIA\nBjsAVDsZSSIbcmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7AFQ7GkkiDWRhdGV0\naW1lBjsAVDsbVDscMDsdMDseMDsfOg1kYXRldGltZTshMDsiMDsjRjskMEki\nGHJlbWVtYmVyX2NyZWF0ZWRfYXQGOwBUbzsmBjsnbzsVEzsWVDsXMDsYSSIA\nBjsAVDsZSSIYcmVtZW1iZXJfY3JlYXRlZF9hdAY7AFQ7GkkiDWRhdGV0aW1l\nBjsAVDsbVDscMDsdMDseMDsfOyg7ITA7IjA7I0Y7JDBJIhJzaWduX2luX2Nv\ndW50BjsAVG87FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiEnNpZ25faW5fY291bnQG\nOwBUOxpJIgxpbnQoMTEpBjsAVDsbRjscaQk7HTA7HjA7HzsgOyFpADsiMDsj\nRjskMEkiF2N1cnJlbnRfc2lnbl9pbl9hdAY7AFRvOyYGOydvOxUTOxZUOxcw\nOxhJIgAGOwBUOxlJIhdjdXJyZW50X3NpZ25faW5fYXQGOwBUOxpJIg1kYXRl\ndGltZQY7AFQ7G1Q7HDA7HTA7HjA7HzsoOyEwOyIwOyNGOyQwSSIUbGFzdF9z\naWduX2luX2F0BjsAVG87JgY7J287FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiFGxh\nc3Rfc2lnbl9pbl9hdAY7AFQ7GkkiDWRhdGV0aW1lBjsAVDsbVDscMDsdMDse\nMDsfOyg7ITA7IjA7I0Y7JDBJIhdjdXJyZW50X3NpZ25faW5faXAGOwBUbzsV\nEzsWVDsXSSIUdXRmOF91bmljb2RlX2NpBjsAVDsYSSIABjsAVDsZSSIXY3Vy\ncmVudF9zaWduX2luX2lwBjsAVDsaSSIRdmFyY2hhcigyNTUpBjsAVDsbVDsc\naQH/Ox0wOx4wOx87JTshMDsiMDsjRjskMEkiFGxhc3Rfc2lnbl9pbl9pcAY7\nAFRvOxUTOxZUOxdJIhR1dGY4X3VuaWNvZGVfY2kGOwBUOxhJIgAGOwBUOxlJ\nIhRsYXN0X3NpZ25faW5faXAGOwBUOxpJIhF2YXJjaGFyKDI1NSkGOwBUOxtU\nOxxpAf87HTA7HjA7HzslOyEwOyIwOyNGOyQwSSIPY3JlYXRlZF9hdAY7AFRv\nOyYGOydvOxUTOxZUOxcwOxhJIgAGOwBUOxlJIg9jcmVhdGVkX2F0BjsAVDsa\nSSINZGF0ZXRpbWUGOwBUOxtUOxwwOx0wOx4wOx87KDshMDsiMDsjRjskMEki\nD3VwZGF0ZWRfYXQGOwBUbzsmBjsnbzsVEzsWVDsXMDsYSSIABjsAVDsZSSIP\ndXBkYXRlZF9hdAY7AFQ7GkkiDWRhdGV0aW1lBjsAVDsbVDscMDsdMDseMDsf\nOyg7ITA7IjA7I0Y7JDA6F0BhZ2dyZWdhdGlvbl9jYWNoZXsAOhdAYXNzb2Np\nYXRpb25fY2FjaGV7BjoLc2NvcmVzVTozQWN0aXZlUmVjb3JkOjpBc3NvY2lh\ndGlvbnM6Okhhc01hbnlBc3NvY2lhdGlvblsHOytbDFsHOgtAb3duZXJAK1sH\nOgxAbG9hZGVkRlsHOgxAdGFyZ2V0WwBbBzoRQHN0YWxlX3N0YXRlMFsHOg5A\naW52ZXJzZWRGWwc6F0Bhc3NvY2lhdGlvbl9zY29wZW86OEFjdGl2ZVJlY29y\nZDo6UmVsYXRpb246OkFjdGl2ZVJlY29yZF9SZWxhdGlvbl9TY29yZRQ6C0Br\nbGFzc2MKU2NvcmU6C0B0YWJsZW86EEFyZWw6OlRhYmxlCzsZSSILc2NvcmVz\nBjsAVDoMQGVuZ2luZUABnToNQGNvbHVtbnMwOg1AYWxpYXNlc1sAOhFAdGFi\nbGVfYWxpYXMwOhFAcHJpbWFyeV9rZXkwOgxAdmFsdWVzewg6DmV4dGVuZGlu\nZ1sAOgliaW5kWwZbB287FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiDnBsYXllcl9p\nZAY7AFQ7GkkiDGludCgxMSkGOwBUOxtUOxxpCTsdMDseMDsfOyA7ITA7IjA7\nIzA7JDBpBzoKd2hlcmVbBm86GkFyZWw6Ok5vZGVzOjpFcXVhbGl0eQc6CkBs\nZWZ0UzogQXJlbDo6QXR0cmlidXRlczo6QXR0cmlidXRlBzoNcmVsYXRpb25v\nOzYLOxlAAZ87N2MXQWN0aXZlUmVjb3JkOjpCYXNlOzgwOzlbADs6MDs7MDoJ\nbmFtZUkiDnBsYXllcl9pZAY7AEY6C0ByaWdodElDOhtBcmVsOjpOb2Rlczo6\nQmluZFBhcmFtIgY/BjsAVDoXQGltcGxpY2l0X3JlYWRvbmx5MDsuMDoUQGRl\nZmF1bHRfc2NvcGVkRjoKQGFyZWxvOhhBcmVsOjpTZWxlY3RNYW5hZ2VyCDs3\nQAGdOglAY3R4bzocQXJlbDo6Tm9kZXM6OlNlbGVjdENvcmUNOgxAc291cmNl\nbzocQXJlbDo6Tm9kZXM6OkpvaW5Tb3VyY2UHO0FAAZ47RVsAOglAdG9wMDoU\nQHNldF9xdWFudGlmaWVyMDoRQHByb2plY3Rpb25zWwZTO0IHO0NAAZ47RElD\nOhxBcmVsOjpOb2Rlczo6U3FsTGl0ZXJhbCIGKgY7AFQ6DEB3aGVyZXNbBm86\nFUFyZWw6Ok5vZGVzOjpBbmQGOg5AY2hpbGRyZW5bBkABqjoMQGdyb3Vwc1sA\nOgxAaGF2aW5nMDoNQHdpbmRvd3NbADoJQGFzdG86IUFyZWw6Ok5vZGVzOjpT\nZWxlY3RTdGF0ZW1lbnQLOgtAY29yZXNbBkABsjoMQG9yZGVyc1sAOxwwOgpA\nbG9jazA6DEBvZmZzZXQwOgpAd2l0aDA6FkBzY29wZV9mb3JfY3JlYXRlMDoS\nQG9yZGVyX2NsYXVzZTA6DEB0b19zcWwwOgpAbGFzdDA6C0BmaXJzdDA6FUBq\nb2luX2RlcGVuZGVuY3kwOhdAc2hvdWxkX2VhZ2VyX2xvYWQwOg1AcmVjb3Jk\nc1sAWwc6C0Bwcm94eW86YUFjdGl2ZVJlY29yZDo6QXNzb2NpYXRpb25zOjpD\nb2xsZWN0aW9uUHJveHk6OkFjdGl2ZVJlY29yZF9Bc3NvY2lhdGlvbnNfQ29s\nbGVjdGlvblByb3h5X1Njb3JlDToRQGFzc29jaWF0aW9uQAGSOzRAAZ07NUAB\nnjs8ewo7P1sGQAGqOz5bBkABpDoJZnJvbTA6CWxvY2swOhJyZXZlcnNlX29y\nZGVyMDtHMDsuRjtIVDtJbztKCDs3QAGdO0tvO0wNO01vO04HO0FAAZ47RVsA\nO08wO1AwO1FbBlM7Qgc7Q0ABnjtESUM7UiIGKgY7AFQ7U1sGbztUBjtVWwZA\nAao7VlsAO1cwO1hbADtZbztaCztbWwZAAcc7XFsAOxwwO10wO14wO18wOhZA\nYXR0cmlidXRlc19jYWNoZXsISSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVEAx\nSSIHaWQGOwBUaQdJIgplbWFpbAY7AFRALzoYQHByZXZpb3VzbHlfY2hhbmdl\nZHsAOhhAY2hhbmdlZF9hdHRyaWJ1dGVzewA6DkByZWFkb25seUY6D0BkZXN0\ncm95ZWRGOhxAbWFya2VkX2Zvcl9kZXN0cnVjdGlvbkY6HkBkZXN0cm95ZWRf\nYnlfYXNzb2NpYXRpb24wOhBAbmV3X3JlY29yZEY6CUB0eG4wOh5AX3N0YXJ0\nX3RyYW5zYWN0aW9uX3N0YXRlewA6F0B0cmFuc2FjdGlvbl9zdGF0ZTA6FEBy\nZWZsZWN0c19zdGF0ZVsGRkkiEF9jc3JmX3Rva2VuBjsARkkiMWdBUTZVa09G\naVFmN21JL2J2azMwcEovd21xNkpJUkZtSHB2ZDFzR2szNDQ9BjsARg==\n', `updated_at` = '2014-04-14 10:31:49' WHERE `sessions`.`id` = 12[0m
+  [1m[35m (5.2ms)[0m  COMMIT
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:49 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:49 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:49 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:49 -0400
+
+
+Started GET "/assets/10.png" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:50 -0400
+
+
+Started GET "/players/sign_out" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.7ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = 'bcf7542c2dd95f6e3f1e9dac86141184' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM `sessions` WHERE `sessions`.`id` = 12
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SessionStore::Session Load (0.4ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = 'd7266366219feb2e2e40398896af540e' ORDER BY `sessions`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 3.3ms)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `sessions` (`created_at`, `data`, `session_id`, `updated_at`) VALUES ('2014-04-14 10:31:53', 'BAh7BkkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGOgtub3RpY2VJIh1TaWduZWQgb3V0IHN1Y2Nlc3NmdWxseS4GOwBU\n', '7cc030a32d7573f2c3ba58a2d8e3487b', '2014-04-14 10:31:53')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+Processing by HangmanController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (1.0ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '7cc030a32d7573f2c3ba58a2d8e3487b' ORDER BY `sessions`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 3ms
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE `sessions` SET `data` = 'BAh7B0kiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6C25vdGljZUki\nDGZsYXNoZXMGOwBUewc7BkkiHVNpZ25lZCBvdXQgc3VjY2Vzc2Z1bGx5LgY7\nAFQ6CmFsZXJ0SSI2WW91IG5lZWQgdG8gc2lnbiBpbiBvciBzaWduIHVwIGJl\nZm9yZSBjb250aW51aW5nLgY7AFRJIhVwbGF5ZXJfcmV0dXJuX3RvBjsARkki\nBi8GOwBU\n', `updated_at` = '2014-04-14 10:31:53' WHERE `sessions`.`id` = 13
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.5ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '7cc030a32d7573f2c3ba58a2d8e3487b' ORDER BY `sessions`.`id` ASC LIMIT 1
+  Rendered devise/shared/_links.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (87.2ms)
+Completed 200 OK in 114ms (Views: 108.9ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `sessions` SET `data` = 'BAh7CEkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6CmFsZXJ0SSIM\nZmxhc2hlcwY7AFR7BjsGSSI2WW91IG5lZWQgdG8gc2lnbiBpbiBvciBzaWdu\nIHVwIGJlZm9yZSBjb250aW51aW5nLgY7AFRJIhVwbGF5ZXJfcmV0dXJuX3Rv\nBjsARkkiBi8GOwBUSSIQX2NzcmZfdG9rZW4GOwBGSSIxWmRIL1JoUzlVamlI\nSmwrWkNHbVVFODlqcUF2ZFNXUHNjdHd3blRrRGQzbz0GOwBG\n', `updated_at` = '2014-04-14 10:31:53' WHERE `sessions`.`id` = 13
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/0.png" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:31:53 -0400
+
+
+Started POST "/players/sign_in" for 127.0.0.1 at 2014-04-14 06:33:56 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZdH/RhS9UjiHJl+ZCGmUE89jqAvdSWPsctwwnTkDd3o=", "player"=>{"email"=>"ilya1113@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mActiveRecord::SessionStore::Session Load (1.1ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '7cc030a32d7573f2c3ba58a2d8e3487b' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.7ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`email` = 'ilya1113@gmail.com' ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `players` SET `last_sign_in_at` = '2014-04-14 03:51:54', `current_sign_in_at` = '2014-04-14 10:33:56', `sign_in_count` = 8, `updated_at` = '2014-04-14 10:33:56' WHERE `players`.`id` = 2[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 145ms (ActiveRecord: 3.3ms)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM `sessions` WHERE `sessions`.`id` = 13
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SessionStore::Session Load (0.7ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '371ae816fb572831b90b64b9f46ac075' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `sessions` (`created_at`, `data`, `session_id`, `updated_at`) VALUES ('2014-04-14 10:33:56', 'BAh7B0kiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGOgtub3RpY2VJIhxTaWduZWQgaW4gc3VjY2Vzc2Z1bGx5LgY7AFRJ\nIht3YXJkZW4udXNlci5wbGF5ZXIua2V5BjsAVFsHWwZpB0kiIiQyYSQxMCRP\nNS94ZWxwVGFFZlhzdVZSclFoLkNPBjsAVA==\n', '371ae816fb572831b90b64b9f46ac075', '2014-04-14 10:33:56')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-14 06:33:56 -0400
+Processing by HangmanController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.7ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '371ae816fb572831b90b64b9f46ac075' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.7ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT SUM(`scores`.`win`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2
+  [1m[36m (0.6ms)[0m  [1mSELECT SUM(`scores`.`lost`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2[0m
+  Rendered hangman/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 140ms (Views: 27.6ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE `sessions` SET `data` = 'BAh7CUkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6C25vdGljZUki\nDGZsYXNoZXMGOwBUewY7BkkiHFNpZ25lZCBpbiBzdWNjZXNzZnVsbHkuBjsA\nVEkiG3dhcmRlbi51c2VyLnBsYXllci5rZXkGOwBUWwdbBmkHSSIiJDJhJDEw\nJE81L3hlbHBUYUVmWHN1VlJyUWguQ08GOwBUSSIJZ2FtZQY7AEZvOgxIYW5n\nbWFuCzoMQGFuc3dlciILc2x1bXBzOhBAbWFza2VkV29yZEkiC19fX19fXwY7\nAFQ6D0Btb3Zlc0xlZnRpDzoMQHN0YXR1c0kiDHBsYXlpbmcGOwBUOhFAbGV0\ndGVyc0xlZnRvOghTZXQGOgpAaGFzaHsfSSIGYQY7AFRUSSIGYgY7AFRUSSIG\nYwY7AFRUSSIGZAY7AFRUSSIGZQY7AFRUSSIGZgY7AFRUSSIGZwY7AFRUSSIG\naAY7AFRUSSIGaQY7AFRUSSIGagY7AFRUSSIGawY7AFRUSSIGbAY7AFRUSSIG\nbQY7AFRUSSIGbgY7AFRUSSIGbwY7AFRUSSIGcAY7AFRUSSIGcQY7AFRUSSIG\ncgY7AFRUSSIGcwY7AFRUSSIGdAY7AFRUSSIGdQY7AFRUSSIGdgY7AFRUSSIG\ndwY7AFRUSSIGeAY7AFRUSSIGeQY7AFRUSSIGegY7AFRUOgxAcGxheWVybzoL\nUGxheWVyFjoQQGF0dHJpYnV0ZXN7EkkiB2lkBjsAVGkHSSIKZW1haWwGOwBU\nSSIXaWx5YTExMTNAZ21haWwuY29tBjsAVEkiF2VuY3J5cHRlZF9wYXNzd29y\nZAY7AFRJIkEkMmEkMTAkTzUveGVscFRhRWZYc3VWUnJRaC5DT2RqQnhSakhT\nNzEub1ZXS1ljMTNHLi5iSWIwbFBtbW0GOwBUSSIZcmVzZXRfcGFzc3dvcmRf\ndG9rZW4GOwBUMEkiG3Jlc2V0X3Bhc3N3b3JkX3NlbnRfYXQGOwBUMEkiGHJl\nbWVtYmVyX2NyZWF0ZWRfYXQGOwBUMEkiEnNpZ25faW5fY291bnQGOwBUaQ1J\nIhdjdXJyZW50X3NpZ25faW5fYXQGOwBUSXU6CVRpbWUNyo0cwAAAgIcGOgl6\nb25lSSIIVVRDBjsAVEkiFGxhc3Rfc2lnbl9pbl9hdAY7AFRJdTsSDcONHMAA\nAGDPBjsTSSIIVVRDBjsAVEkiF2N1cnJlbnRfc2lnbl9pbl9pcAY7AFRJIg4x\nMjcuMC4wLjEGOwBUSSIUbGFzdF9zaWduX2luX2lwBjsAVEkiDjEyNy4wLjAu\nMQY7AFRJIg9jcmVhdGVkX2F0BjsAVEl1OxINio0cwAAA0LIGOxNJIghVVEMG\nOwBUSSIPdXBkYXRlZF9hdAY7AFRJdTsSDcqNHMAAAICHBjsTSSIIVVRDBjsA\nVDobQGNvbHVtbl90eXBlc19vdmVycmlkZTA6EkBjb2x1bW5fdHlwZXN7Ekki\nB2lkBjsAVG86PEFjdGl2ZVJlY29yZDo6Q29ubmVjdGlvbkFkYXB0ZXJzOjpN\neXNxbDJBZGFwdGVyOjpDb2x1bW4TOgxAc3RyaWN0VDoPQGNvbGxhdGlvbjA6\nC0BleHRyYUkiE2F1dG9faW5jcmVtZW50BjsAVDoKQG5hbWVJIgdpZAY7AFQ6\nDkBzcWxfdHlwZUkiDGludCgxMSkGOwBUOgpAbnVsbEY6C0BsaW1pdGkJOg9A\ncHJlY2lzaW9uMDoLQHNjYWxlMDoKQHR5cGU6DGludGVnZXI6DUBkZWZhdWx0\nMDoWQGRlZmF1bHRfZnVuY3Rpb24wOg1AcHJpbWFyeVQ6C0Bjb2RlcjBJIgpl\nbWFpbAY7AFRvOxYTOxdUOxhJIhR1dGY4X3VuaWNvZGVfY2kGOwBUOxlJIgAG\nOwBUOxpJIgplbWFpbAY7AFQ7G0kiEXZhcmNoYXIoMjU1KQY7AFQ7HEY7HWkB\n/zseMDsfMDsgOgtzdHJpbmc7IkkiAAY7AFQ7IzA7JEY7JTBJIhdlbmNyeXB0\nZWRfcGFzc3dvcmQGOwBUbzsWEzsXVDsYSSIUdXRmOF91bmljb2RlX2NpBjsA\nVDsZSSIABjsAVDsaSSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVDsbSSIRdmFy\nY2hhcigyNTUpBjsAVDscRjsdaQH/Ox4wOx8wOyA7JjsiSSIABjsAVDsjMDsk\nRjslMEkiGXJlc2V0X3Bhc3N3b3JkX3Rva2VuBjsAVG87FhM7F1Q7GEkiFHV0\nZjhfdW5pY29kZV9jaQY7AFQ7GUkiAAY7AFQ7GkkiGXJlc2V0X3Bhc3N3b3Jk\nX3Rva2VuBjsAVDsbSSIRdmFyY2hhcigyNTUpBjsAVDscVDsdaQH/Ox4wOx8w\nOyA7JjsiMDsjMDskRjslMEkiG3Jlc2V0X3Bhc3N3b3JkX3NlbnRfYXQGOwBU\nbzo9QWN0aXZlUmVjb3JkOjpBdHRyaWJ1dGVNZXRob2RzOjpUaW1lWm9uZUNv\nbnZlcnNpb246OlR5cGUGOgxAY29sdW1ubzsWEzsXVDsYMDsZSSIABjsAVDsa\nSSIbcmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7AFQ7G0kiDWRhdGV0aW1lBjsA\nVDscVDsdMDseMDsfMDsgOg1kYXRldGltZTsiMDsjMDskRjslMEkiGHJlbWVt\nYmVyX2NyZWF0ZWRfYXQGOwBUbzsnBjsobzsWEzsXVDsYMDsZSSIABjsAVDsa\nSSIYcmVtZW1iZXJfY3JlYXRlZF9hdAY7AFQ7G0kiDWRhdGV0aW1lBjsAVDsc\nVDsdMDseMDsfMDsgOyk7IjA7IzA7JEY7JTBJIhJzaWduX2luX2NvdW50BjsA\nVG87FhM7F1Q7GDA7GUkiAAY7AFQ7GkkiEnNpZ25faW5fY291bnQGOwBUOxtJ\nIgxpbnQoMTEpBjsAVDscRjsdaQk7HjA7HzA7IDshOyJpADsjMDskRjslMEki\nF2N1cnJlbnRfc2lnbl9pbl9hdAY7AFRvOycGOyhvOxYTOxdUOxgwOxlJIgAG\nOwBUOxpJIhdjdXJyZW50X3NpZ25faW5fYXQGOwBUOxtJIg1kYXRldGltZQY7\nAFQ7HFQ7HTA7HjA7HzA7IDspOyIwOyMwOyRGOyUwSSIUbGFzdF9zaWduX2lu\nX2F0BjsAVG87JwY7KG87FhM7F1Q7GDA7GUkiAAY7AFQ7GkkiFGxhc3Rfc2ln\nbl9pbl9hdAY7AFQ7G0kiDWRhdGV0aW1lBjsAVDscVDsdMDseMDsfMDsgOyk7\nIjA7IzA7JEY7JTBJIhdjdXJyZW50X3NpZ25faW5faXAGOwBUbzsWEzsXVDsY\nSSIUdXRmOF91bmljb2RlX2NpBjsAVDsZSSIABjsAVDsaSSIXY3VycmVudF9z\naWduX2luX2lwBjsAVDsbSSIRdmFyY2hhcigyNTUpBjsAVDscVDsdaQH/Ox4w\nOx8wOyA7JjsiMDsjMDskRjslMEkiFGxhc3Rfc2lnbl9pbl9pcAY7AFRvOxYT\nOxdUOxhJIhR1dGY4X3VuaWNvZGVfY2kGOwBUOxlJIgAGOwBUOxpJIhRsYXN0\nX3NpZ25faW5faXAGOwBUOxtJIhF2YXJjaGFyKDI1NSkGOwBUOxxUOx1pAf87\nHjA7HzA7IDsmOyIwOyMwOyRGOyUwSSIPY3JlYXRlZF9hdAY7AFRvOycGOyhv\nOxYTOxdUOxgwOxlJIgAGOwBUOxpJIg9jcmVhdGVkX2F0BjsAVDsbSSINZGF0\nZXRpbWUGOwBUOxxUOx0wOx4wOx8wOyA7KTsiMDsjMDskRjslMEkiD3VwZGF0\nZWRfYXQGOwBUbzsnBjsobzsWEzsXVDsYMDsZSSIABjsAVDsaSSIPdXBkYXRl\nZF9hdAY7AFQ7G0kiDWRhdGV0aW1lBjsAVDscVDsdMDseMDsfMDsgOyk7IjA7\nIzA7JEY7JTA6F0BhZ2dyZWdhdGlvbl9jYWNoZXsAOhdAYXNzb2NpYXRpb25f\nY2FjaGV7BjoLc2NvcmVzVTozQWN0aXZlUmVjb3JkOjpBc3NvY2lhdGlvbnM6\nOkhhc01hbnlBc3NvY2lhdGlvblsHOyxbDFsHOgtAb3duZXJAMlsHOgxAbG9h\nZGVkRlsHOgxAdGFyZ2V0WwBbBzoRQHN0YWxlX3N0YXRlMFsHOg5AaW52ZXJz\nZWRGWwc6F0Bhc3NvY2lhdGlvbl9zY29wZW86OEFjdGl2ZVJlY29yZDo6UmVs\nYXRpb246OkFjdGl2ZVJlY29yZF9SZWxhdGlvbl9TY29yZRQ6C0BrbGFzc2MK\nU2NvcmU6C0B0YWJsZW86EEFyZWw6OlRhYmxlCzsaSSILc2NvcmVzBjsAVDoM\nQGVuZ2luZUABpDoNQGNvbHVtbnMwOg1AYWxpYXNlc1sAOhFAdGFibGVfYWxp\nYXMwOhFAcHJpbWFyeV9rZXkwOgxAdmFsdWVzewg6DmV4dGVuZGluZ1sAOgli\naW5kWwZbB287FhM7F1Q7GDA7GUkiAAY7AFQ7GkkiDnBsYXllcl9pZAY7AFQ7\nG0kiDGludCgxMSkGOwBUOxxUOx1pCTseMDsfMDsgOyE7IjA7IzA7JDA7JTBp\nBzoKd2hlcmVbBm86GkFyZWw6Ok5vZGVzOjpFcXVhbGl0eQc6CkBsZWZ0Uzog\nQXJlbDo6QXR0cmlidXRlczo6QXR0cmlidXRlBzoNcmVsYXRpb25vOzcLOxpA\nAaY7OGMXQWN0aXZlUmVjb3JkOjpCYXNlOzkwOzpbADs7MDs8MDoJbmFtZUki\nDnBsYXllcl9pZAY7AEY6C0ByaWdodElDOhtBcmVsOjpOb2Rlczo6QmluZFBh\ncmFtIgY/BjsAVDoXQGltcGxpY2l0X3JlYWRvbmx5MDsvMDoUQGRlZmF1bHRf\nc2NvcGVkRjoKQGFyZWxvOhhBcmVsOjpTZWxlY3RNYW5hZ2VyCDs4QAGkOglA\nY3R4bzocQXJlbDo6Tm9kZXM6OlNlbGVjdENvcmUNOgxAc291cmNlbzocQXJl\nbDo6Tm9kZXM6OkpvaW5Tb3VyY2UHO0JAAaU7RlsAOglAdG9wMDoUQHNldF9x\ndWFudGlmaWVyMDoRQHByb2plY3Rpb25zWwZTO0MHO0RAAaU7RUlDOhxBcmVs\nOjpOb2Rlczo6U3FsTGl0ZXJhbCIGKgY7AFQ6DEB3aGVyZXNbBm86FUFyZWw6\nOk5vZGVzOjpBbmQGOg5AY2hpbGRyZW5bBkABsToMQGdyb3Vwc1sAOgxAaGF2\naW5nMDoNQHdpbmRvd3NbADoJQGFzdG86IUFyZWw6Ok5vZGVzOjpTZWxlY3RT\ndGF0ZW1lbnQLOgtAY29yZXNbBkABuToMQG9yZGVyc1sAOx0wOgpAbG9jazA6\nDEBvZmZzZXQwOgpAd2l0aDA6FkBzY29wZV9mb3JfY3JlYXRlMDoSQG9yZGVy\nX2NsYXVzZTA6DEB0b19zcWwwOgpAbGFzdDA6C0BmaXJzdDA6FUBqb2luX2Rl\ncGVuZGVuY3kwOhdAc2hvdWxkX2VhZ2VyX2xvYWQwOg1AcmVjb3Jkc1sAWwc6\nC0Bwcm94eW86YUFjdGl2ZVJlY29yZDo6QXNzb2NpYXRpb25zOjpDb2xsZWN0\naW9uUHJveHk6OkFjdGl2ZVJlY29yZF9Bc3NvY2lhdGlvbnNfQ29sbGVjdGlv\nblByb3h5X1Njb3JlDToRQGFzc29jaWF0aW9uQAGZOzVAAaQ7NkABpTs9ewo7\nQFsGQAGxOz9bBkABqzoJZnJvbTA6CWxvY2swOhJyZXZlcnNlX29yZGVyMDtI\nMDsvRjtJVDtKbztLCDs4QAGkO0xvO00NO05vO08HO0JAAaU7RlsAO1AwO1Ew\nO1JbBlM7Qwc7REABpTtFSUM7UyIGKgY7AFQ7VFsGbztVBjtWWwZAAbE7V1sA\nO1gwO1lbADtabztbCztcWwZAAc47XVsAOx0wO14wO18wO2AwOhZAYXR0cmli\ndXRlc19jYWNoZXsISSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVEA4SSIHaWQG\nOwBUaQdJIgplbWFpbAY7AFRANjoYQHByZXZpb3VzbHlfY2hhbmdlZHsAOhhA\nY2hhbmdlZF9hdHRyaWJ1dGVzewA6DkByZWFkb25seUY6D0BkZXN0cm95ZWRG\nOhxAbWFya2VkX2Zvcl9kZXN0cnVjdGlvbkY6HkBkZXN0cm95ZWRfYnlfYXNz\nb2NpYXRpb24wOhBAbmV3X3JlY29yZEY6CUB0eG4wOh5AX3N0YXJ0X3RyYW5z\nYWN0aW9uX3N0YXRlewA6F0B0cmFuc2FjdGlvbl9zdGF0ZTA6FEByZWZsZWN0\nc19zdGF0ZVsGRkkiEF9jc3JmX3Rva2VuBjsARkkiMWhCTk5NT0I2K0NnSWI3\nWU1xWkl3K29oalMwcEk0NjYzK0ZMN216MkRRVWs9BjsARg==\n', `updated_at` = '2014-04-14 10:33:56' WHERE `sessions`.`id` = 14[0m
+  [1m[35m (2.2ms)[0m  COMMIT
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/10.png" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:33:57 -0400
+
+
+Started GET "/hangman/newgame" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+Processing by HangmanController#newgame as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.6ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '371ae816fb572831b90b64b9f46ac075' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (1.6ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE `sessions` SET `data` = 'BAh7CEkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6C25vdGljZUki\nDGZsYXNoZXMGOwBUewY7BkkiHFNpZ25lZCBpbiBzdWNjZXNzZnVsbHkuBjsA\nVEkiG3dhcmRlbi51c2VyLnBsYXllci5rZXkGOwBUWwdbBmkHSSIiJDJhJDEw\nJE81L3hlbHBUYUVmWHN1VlJyUWguQ08GOwBUSSIQX2NzcmZfdG9rZW4GOwBG\nSSIxaEJOTk1PQjYrQ2dJYjdZTXFaSXcrb2hqUzBwSTQ2NjMrRkw3bXoyRFFV\naz0GOwBG\n', `updated_at` = '2014-04-14 10:34:01' WHERE `sessions`.`id` = 14
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+Processing by HangmanController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.8ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '371ae816fb572831b90b64b9f46ac075' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.4ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT SUM(`scores`.`win`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2
+  [1m[36m (1.0ms)[0m  [1mSELECT SUM(`scores`.`lost`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2[0m
+  Rendered hangman/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 123ms (Views: 22.6ms | ActiveRecord: 2.7ms)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mUPDATE `sessions` SET `data` = 'BAh7CEkiG3dhcmRlbi51c2VyLnBsYXllci5rZXkGOgZFVFsHWwZpB0kiIiQy\nYSQxMCRPNS94ZWxwVGFFZlhzdVZSclFoLkNPBjsAVEkiEF9jc3JmX3Rva2Vu\nBjsARkkiMWhCTk5NT0I2K0NnSWI3WU1xWkl3K29oalMwcEk0NjYzK0ZMN216\nMkRRVWs9BjsARkkiCWdhbWUGOwBGbzoMSGFuZ21hbgs6DEBhbnN3ZXIiDXRo\ncmlsbGVkOhBAbWFza2VkV29yZEkiDV9fX19fX19fBjsAVDoPQG1vdmVzTGVm\ndGkPOgxAc3RhdHVzSSIMcGxheWluZwY7AFQ6EUBsZXR0ZXJzTGVmdG86CFNl\ndAY6CkBoYXNoex9JIgZhBjsAVFRJIgZiBjsAVFRJIgZjBjsAVFRJIgZkBjsA\nVFRJIgZlBjsAVFRJIgZmBjsAVFRJIgZnBjsAVFRJIgZoBjsAVFRJIgZpBjsA\nVFRJIgZqBjsAVFRJIgZrBjsAVFRJIgZsBjsAVFRJIgZtBjsAVFRJIgZuBjsA\nVFRJIgZvBjsAVFRJIgZwBjsAVFRJIgZxBjsAVFRJIgZyBjsAVFRJIgZzBjsA\nVFRJIgZ0BjsAVFRJIgZ1BjsAVFRJIgZ2BjsAVFRJIgZ3BjsAVFRJIgZ4BjsA\nVFRJIgZ5BjsAVFRJIgZ6BjsAVFQ6DEBwbGF5ZXJvOgtQbGF5ZXIWOhBAYXR0\ncmlidXRlc3sSSSIHaWQGOwBUaQdJIgplbWFpbAY7AFRJIhdpbHlhMTExM0Bn\nbWFpbC5jb20GOwBUSSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVEkiQSQyYSQx\nMCRPNS94ZWxwVGFFZlhzdVZSclFoLkNPZGpCeFJqSFM3MS5vVldLWWMxM0cu\nLmJJYjBsUG1tbQY7AFRJIhlyZXNldF9wYXNzd29yZF90b2tlbgY7AFQwSSIb\ncmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7AFQwSSIYcmVtZW1iZXJfY3JlYXRl\nZF9hdAY7AFQwSSISc2lnbl9pbl9jb3VudAY7AFRpDUkiF2N1cnJlbnRfc2ln\nbl9pbl9hdAY7AFRJdToJVGltZQ3KjRzAAACAhwY6CXpvbmVJIghVVEMGOwBU\nSSIUbGFzdF9zaWduX2luX2F0BjsAVEl1OxENw40cwAAAYM8GOxJJIghVVEMG\nOwBUSSIXY3VycmVudF9zaWduX2luX2lwBjsAVEkiDjEyNy4wLjAuMQY7AFRJ\nIhRsYXN0X3NpZ25faW5faXAGOwBUSSIOMTI3LjAuMC4xBjsAVEkiD2NyZWF0\nZWRfYXQGOwBUSXU7EQ2KjRzAAADQsgY7EkkiCFVUQwY7AFRJIg91cGRhdGVk\nX2F0BjsAVEl1OxENyo0cwAAAgIcGOxJJIghVVEMGOwBUOhtAY29sdW1uX3R5\ncGVzX292ZXJyaWRlMDoSQGNvbHVtbl90eXBlc3sSSSIHaWQGOwBUbzo8QWN0\naXZlUmVjb3JkOjpDb25uZWN0aW9uQWRhcHRlcnM6Ok15c3FsMkFkYXB0ZXI6\nOkNvbHVtbhM6DEBzdHJpY3RUOg9AY29sbGF0aW9uMDoLQGV4dHJhSSITYXV0\nb19pbmNyZW1lbnQGOwBUOgpAbmFtZUkiB2lkBjsAVDoOQHNxbF90eXBlSSIM\naW50KDExKQY7AFQ6CkBudWxsRjoLQGxpbWl0aQk6D0BwcmVjaXNpb24wOgtA\nc2NhbGUwOgpAdHlwZToMaW50ZWdlcjoNQGRlZmF1bHQwOhZAZGVmYXVsdF9m\ndW5jdGlvbjA6DUBwcmltYXJ5VDoLQGNvZGVyMEkiCmVtYWlsBjsAVG87FRM7\nFlQ7F0kiFHV0ZjhfdW5pY29kZV9jaQY7AFQ7GEkiAAY7AFQ7GUkiCmVtYWls\nBjsAVDsaSSIRdmFyY2hhcigyNTUpBjsAVDsbRjscaQH/Ox0wOx4wOx86C3N0\ncmluZzshSSIABjsAVDsiMDsjRjskMEkiF2VuY3J5cHRlZF9wYXNzd29yZAY7\nAFRvOxUTOxZUOxdJIhR1dGY4X3VuaWNvZGVfY2kGOwBUOxhJIgAGOwBUOxlJ\nIhdlbmNyeXB0ZWRfcGFzc3dvcmQGOwBUOxpJIhF2YXJjaGFyKDI1NSkGOwBU\nOxtGOxxpAf87HTA7HjA7HzslOyFJIgAGOwBUOyIwOyNGOyQwSSIZcmVzZXRf\ncGFzc3dvcmRfdG9rZW4GOwBUbzsVEzsWVDsXSSIUdXRmOF91bmljb2RlX2Np\nBjsAVDsYSSIABjsAVDsZSSIZcmVzZXRfcGFzc3dvcmRfdG9rZW4GOwBUOxpJ\nIhF2YXJjaGFyKDI1NSkGOwBUOxtUOxxpAf87HTA7HjA7HzslOyEwOyIwOyNG\nOyQwSSIbcmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7AFRvOj1BY3RpdmVSZWNv\ncmQ6OkF0dHJpYnV0ZU1ldGhvZHM6OlRpbWVab25lQ29udmVyc2lvbjo6VHlw\nZQY6DEBjb2x1bW5vOxUTOxZUOxcwOxhJIgAGOwBUOxlJIhtyZXNldF9wYXNz\nd29yZF9zZW50X2F0BjsAVDsaSSINZGF0ZXRpbWUGOwBUOxtUOxwwOx0wOx4w\nOx86DWRhdGV0aW1lOyEwOyIwOyNGOyQwSSIYcmVtZW1iZXJfY3JlYXRlZF9h\ndAY7AFRvOyYGOydvOxUTOxZUOxcwOxhJIgAGOwBUOxlJIhhyZW1lbWJlcl9j\ncmVhdGVkX2F0BjsAVDsaSSINZGF0ZXRpbWUGOwBUOxtUOxwwOx0wOx4wOx87\nKDshMDsiMDsjRjskMEkiEnNpZ25faW5fY291bnQGOwBUbzsVEzsWVDsXMDsY\nSSIABjsAVDsZSSISc2lnbl9pbl9jb3VudAY7AFQ7GkkiDGludCgxMSkGOwBU\nOxtGOxxpCTsdMDseMDsfOyA7IWkAOyIwOyNGOyQwSSIXY3VycmVudF9zaWdu\nX2luX2F0BjsAVG87JgY7J287FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiF2N1cnJl\nbnRfc2lnbl9pbl9hdAY7AFQ7GkkiDWRhdGV0aW1lBjsAVDsbVDscMDsdMDse\nMDsfOyg7ITA7IjA7I0Y7JDBJIhRsYXN0X3NpZ25faW5fYXQGOwBUbzsmBjsn\nbzsVEzsWVDsXMDsYSSIABjsAVDsZSSIUbGFzdF9zaWduX2luX2F0BjsAVDsa\nSSINZGF0ZXRpbWUGOwBUOxtUOxwwOx0wOx4wOx87KDshMDsiMDsjRjskMEki\nF2N1cnJlbnRfc2lnbl9pbl9pcAY7AFRvOxUTOxZUOxdJIhR1dGY4X3VuaWNv\nZGVfY2kGOwBUOxhJIgAGOwBUOxlJIhdjdXJyZW50X3NpZ25faW5faXAGOwBU\nOxpJIhF2YXJjaGFyKDI1NSkGOwBUOxtUOxxpAf87HTA7HjA7HzslOyEwOyIw\nOyNGOyQwSSIUbGFzdF9zaWduX2luX2lwBjsAVG87FRM7FlQ7F0kiFHV0Zjhf\ndW5pY29kZV9jaQY7AFQ7GEkiAAY7AFQ7GUkiFGxhc3Rfc2lnbl9pbl9pcAY7\nAFQ7GkkiEXZhcmNoYXIoMjU1KQY7AFQ7G1Q7HGkB/zsdMDseMDsfOyU7ITA7\nIjA7I0Y7JDBJIg9jcmVhdGVkX2F0BjsAVG87JgY7J287FRM7FlQ7FzA7GEki\nAAY7AFQ7GUkiD2NyZWF0ZWRfYXQGOwBUOxpJIg1kYXRldGltZQY7AFQ7G1Q7\nHDA7HTA7HjA7HzsoOyEwOyIwOyNGOyQwSSIPdXBkYXRlZF9hdAY7AFRvOyYG\nOydvOxUTOxZUOxcwOxhJIgAGOwBUOxlJIg91cGRhdGVkX2F0BjsAVDsaSSIN\nZGF0ZXRpbWUGOwBUOxtUOxwwOx0wOx4wOx87KDshMDsiMDsjRjskMDoXQGFn\nZ3JlZ2F0aW9uX2NhY2hlewA6F0Bhc3NvY2lhdGlvbl9jYWNoZXsGOgtzY29y\nZXNVOjNBY3RpdmVSZWNvcmQ6OkFzc29jaWF0aW9uczo6SGFzTWFueUFzc29j\naWF0aW9uWwc7K1sMWwc6C0Bvd25lckAtWwc6DEBsb2FkZWRGWwc6DEB0YXJn\nZXRbAFsHOhFAc3RhbGVfc3RhdGUwWwc6DkBpbnZlcnNlZEZbBzoXQGFzc29j\naWF0aW9uX3Njb3Blbzo4QWN0aXZlUmVjb3JkOjpSZWxhdGlvbjo6QWN0aXZl\nUmVjb3JkX1JlbGF0aW9uX1Njb3JlFDoLQGtsYXNzYwpTY29yZToLQHRhYmxl\nbzoQQXJlbDo6VGFibGULOxlJIgtzY29yZXMGOwBUOgxAZW5naW5lQAGfOg1A\nY29sdW1uczA6DUBhbGlhc2VzWwA6EUB0YWJsZV9hbGlhczA6EUBwcmltYXJ5\nX2tleTA6DEB2YWx1ZXN7CDoOZXh0ZW5kaW5nWwA6CWJpbmRbBlsHbzsVEzsW\nVDsXMDsYSSIABjsAVDsZSSIOcGxheWVyX2lkBjsAVDsaSSIMaW50KDExKQY7\nAFQ7G1Q7HGkJOx0wOx4wOx87IDshMDsiMDsjMDskMGkHOgp3aGVyZVsGbzoa\nQXJlbDo6Tm9kZXM6OkVxdWFsaXR5BzoKQGxlZnRTOiBBcmVsOjpBdHRyaWJ1\ndGVzOjpBdHRyaWJ1dGUHOg1yZWxhdGlvbm87Ngs7GUABoTs3YxdBY3RpdmVS\nZWNvcmQ6OkJhc2U7ODA7OVsAOzowOzswOgluYW1lSSIOcGxheWVyX2lkBjsA\nRjoLQHJpZ2h0SUM6G0FyZWw6Ok5vZGVzOjpCaW5kUGFyYW0iBj8GOwBUOhdA\naW1wbGljaXRfcmVhZG9ubHkwOy4wOhRAZGVmYXVsdF9zY29wZWRGOgpAYXJl\nbG86GEFyZWw6OlNlbGVjdE1hbmFnZXIIOzdAAZ86CUBjdHhvOhxBcmVsOjpO\nb2Rlczo6U2VsZWN0Q29yZQ06DEBzb3VyY2VvOhxBcmVsOjpOb2Rlczo6Sm9p\nblNvdXJjZQc7QUABoDtFWwA6CUB0b3AwOhRAc2V0X3F1YW50aWZpZXIwOhFA\ncHJvamVjdGlvbnNbBlM7Qgc7Q0ABoDtESUM6HEFyZWw6Ok5vZGVzOjpTcWxM\naXRlcmFsIgYqBjsAVDoMQHdoZXJlc1sGbzoVQXJlbDo6Tm9kZXM6OkFuZAY6\nDkBjaGlsZHJlblsGQAGsOgxAZ3JvdXBzWwA6DEBoYXZpbmcwOg1Ad2luZG93\nc1sAOglAYXN0bzohQXJlbDo6Tm9kZXM6OlNlbGVjdFN0YXRlbWVudAs6C0Bj\nb3Jlc1sGQAG0OgxAb3JkZXJzWwA7HDA6CkBsb2NrMDoMQG9mZnNldDA6CkB3\naXRoMDoWQHNjb3BlX2Zvcl9jcmVhdGUwOhJAb3JkZXJfY2xhdXNlMDoMQHRv\nX3NxbDA6CkBsYXN0MDoLQGZpcnN0MDoVQGpvaW5fZGVwZW5kZW5jeTA6F0Bz\naG91bGRfZWFnZXJfbG9hZDA6DUByZWNvcmRzWwBbBzoLQHByb3h5bzphQWN0\naXZlUmVjb3JkOjpBc3NvY2lhdGlvbnM6OkNvbGxlY3Rpb25Qcm94eTo6QWN0\naXZlUmVjb3JkX0Fzc29jaWF0aW9uc19Db2xsZWN0aW9uUHJveHlfU2NvcmUN\nOhFAYXNzb2NpYXRpb25AAZQ7NEABnzs1QAGgOzx7Cjs/WwZAAaw7PlsGQAGm\nOglmcm9tMDoJbG9jazA6EnJldmVyc2Vfb3JkZXIwO0cwOy5GO0hUO0lvO0oI\nOzdAAZ87S287TA07TW87Tgc7QUABoDtFWwA7TzA7UDA7UVsGUztCBztDQAGg\nO0RJQztSIgYqBjsAVDtTWwZvO1QGO1VbBkABrDtWWwA7VzA7WFsAO1lvO1oL\nO1tbBkAByTtcWwA7HDA7XTA7XjA7XzA6FkBhdHRyaWJ1dGVzX2NhY2hlewhJ\nIhdlbmNyeXB0ZWRfcGFzc3dvcmQGOwBUQDNJIgdpZAY7AFRpB0kiCmVtYWls\nBjsAVEAxOhhAcHJldmlvdXNseV9jaGFuZ2VkewA6GEBjaGFuZ2VkX2F0dHJp\nYnV0ZXN7ADoOQHJlYWRvbmx5RjoPQGRlc3Ryb3llZEY6HEBtYXJrZWRfZm9y\nX2Rlc3RydWN0aW9uRjoeQGRlc3Ryb3llZF9ieV9hc3NvY2lhdGlvbjA6EEBu\nZXdfcmVjb3JkRjoJQHR4bjA6HkBfc3RhcnRfdHJhbnNhY3Rpb25fc3RhdGV7\nADoXQHRyYW5zYWN0aW9uX3N0YXRlMDoUQHJlZmxlY3RzX3N0YXRlWwZG\n', `updated_at` = '2014-04-14 10:34:01' WHERE `sessions`.`id` = 14[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/10.png" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:01 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:02 -0400
+
+
+Started GET "/players/sign_out" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (1.0ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '371ae816fb572831b90b64b9f46ac075' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM `sessions` WHERE `sessions`.`id` = 14
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SessionStore::Session Load (0.5ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = 'c4fdf4468cc2df099002d9b163b11972' ORDER BY `sessions`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 3.7ms)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `sessions` (`created_at`, `data`, `session_id`, `updated_at`) VALUES ('2014-04-14 10:34:04', 'BAh7BkkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGOgtub3RpY2VJIh1TaWduZWQgb3V0IHN1Y2Nlc3NmdWxseS4GOwBU\n', '137e7e8539e1e89d6527629cd9de34f0', '2014-04-14 10:34:04')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+Processing by HangmanController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.6ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '137e7e8539e1e89d6527629cd9de34f0' ORDER BY `sessions`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 2ms
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `sessions` SET `data` = 'BAh7B0kiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6C25vdGljZUki\nDGZsYXNoZXMGOwBUewc7BkkiHVNpZ25lZCBvdXQgc3VjY2Vzc2Z1bGx5LgY7\nAFQ6CmFsZXJ0SSI2WW91IG5lZWQgdG8gc2lnbiBpbiBvciBzaWduIHVwIGJl\nZm9yZSBjb250aW51aW5nLgY7AFRJIhVwbGF5ZXJfcmV0dXJuX3RvBjsARkki\nBi8GOwBU\n', `updated_at` = '2014-04-14 10:34:04' WHERE `sessions`.`id` = 15
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/players/sign_in" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.5ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '137e7e8539e1e89d6527629cd9de34f0' ORDER BY `sessions`.`id` ASC LIMIT 1
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE `sessions` SET `data` = 'BAh7CEkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6CmFsZXJ0SSIM\nZmxhc2hlcwY7AFR7BjsGSSI2WW91IG5lZWQgdG8gc2lnbiBpbiBvciBzaWdu\nIHVwIGJlZm9yZSBjb250aW51aW5nLgY7AFRJIhVwbGF5ZXJfcmV0dXJuX3Rv\nBjsARkkiBi8GOwBUSSIQX2NzcmZfdG9rZW4GOwBGSSIxakJTMmhpZHM2WjB6\nZWRKeWJwdGsxS0Zhbjh0SGdYZWVHZUlXU2lHNXZwQT0GOwBG\n', `updated_at` = '2014-04-14 10:34:04' WHERE `sessions`.`id` = 15
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/0.png" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:04 -0400
+
+
+Started POST "/players/sign_in" for 127.0.0.1 at 2014-04-14 06:34:06 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jBS2hids6Z0zedJybptk1KFan8tHgXeeGeIWSiG5vpA=", "player"=>{"email"=>"ilya1113@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mActiveRecord::SessionStore::Session Load (0.5ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '137e7e8539e1e89d6527629cd9de34f0' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`email` = 'ilya1113@gmail.com' ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `players` SET `last_sign_in_at` = '2014-04-14 10:33:56', `current_sign_in_at` = '2014-04-14 10:34:06', `sign_in_count` = 9, `updated_at` = '2014-04-14 10:34:06' WHERE `players`.`id` = 2[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms (ActiveRecord: 2.7ms)
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM `sessions` WHERE `sessions`.`id` = 15
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SessionStore::Session Load (0.6ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO `sessions` (`created_at`, `data`, `session_id`, `updated_at`) VALUES ('2014-04-14 10:34:06', 'BAh7B0kiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwBJIgxmbGFzaGVz\nBjsAVHsGOgtub3RpY2VJIhxTaWduZWQgaW4gc3VjY2Vzc2Z1bGx5LgY7AFRJ\nIht3YXJkZW4udXNlci5wbGF5ZXIua2V5BjsAVFsHWwZpB0kiIiQyYSQxMCRP\nNS94ZWxwVGFFZlhzdVZSclFoLkNPBjsAVA==\n', '32683560225854e2342337190b152e6f', '2014-04-14 10:34:06')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-14 06:34:06 -0400
+Processing by HangmanController#index as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (2.5ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (3.3ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (2.7ms)[0m  SELECT SUM(`scores`.`win`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2
+  [1m[36m (1.1ms)[0m  [1mSELECT SUM(`scores`.`lost`) AS sum_id FROM `scores` WHERE `scores`.`player_id` = 2[0m
+  Rendered hangman/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 145ms (Views: 30.0ms | ActiveRecord: 9.5ms)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE `sessions` SET `data` = 'BAh7CUkiCmZsYXNoBjoGRVR7B0kiDGRpc2NhcmQGOwBUWwY6C25vdGljZUki\nDGZsYXNoZXMGOwBUewY7BkkiHFNpZ25lZCBpbiBzdWNjZXNzZnVsbHkuBjsA\nVEkiG3dhcmRlbi51c2VyLnBsYXllci5rZXkGOwBUWwdbBmkHSSIiJDJhJDEw\nJE81L3hlbHBUYUVmWHN1VlJyUWguQ08GOwBUSSIJZ2FtZQY7AEZvOgxIYW5n\nbWFuCzoMQGFuc3dlciIMZGVza3RvcDoQQG1hc2tlZFdvcmRJIgxfX19fX19f\nBjsAVDoPQG1vdmVzTGVmdGkPOgxAc3RhdHVzSSIMcGxheWluZwY7AFQ6EUBs\nZXR0ZXJzTGVmdG86CFNldAY6CkBoYXNoex9JIgZhBjsAVFRJIgZiBjsAVFRJ\nIgZjBjsAVFRJIgZkBjsAVFRJIgZlBjsAVFRJIgZmBjsAVFRJIgZnBjsAVFRJ\nIgZoBjsAVFRJIgZpBjsAVFRJIgZqBjsAVFRJIgZrBjsAVFRJIgZsBjsAVFRJ\nIgZtBjsAVFRJIgZuBjsAVFRJIgZvBjsAVFRJIgZwBjsAVFRJIgZxBjsAVFRJ\nIgZyBjsAVFRJIgZzBjsAVFRJIgZ0BjsAVFRJIgZ1BjsAVFRJIgZ2BjsAVFRJ\nIgZ3BjsAVFRJIgZ4BjsAVFRJIgZ5BjsAVFRJIgZ6BjsAVFQ6DEBwbGF5ZXJv\nOgtQbGF5ZXIWOhBAYXR0cmlidXRlc3sSSSIHaWQGOwBUaQdJIgplbWFpbAY7\nAFRJIhdpbHlhMTExM0BnbWFpbC5jb20GOwBUSSIXZW5jcnlwdGVkX3Bhc3N3\nb3JkBjsAVEkiQSQyYSQxMCRPNS94ZWxwVGFFZlhzdVZSclFoLkNPZGpCeFJq\nSFM3MS5vVldLWWMxM0cuLmJJYjBsUG1tbQY7AFRJIhlyZXNldF9wYXNzd29y\nZF90b2tlbgY7AFQwSSIbcmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7AFQwSSIY\ncmVtZW1iZXJfY3JlYXRlZF9hdAY7AFQwSSISc2lnbl9pbl9jb3VudAY7AFRp\nDkkiF2N1cnJlbnRfc2lnbl9pbl9hdAY7AFRJdToJVGltZQ3KjRzAAABgiAY6\nCXpvbmVJIghVVEMGOwBUSSIUbGFzdF9zaWduX2luX2F0BjsAVEl1OxINyo0c\nwAAAgIcGOxNJIghVVEMGOwBUSSIXY3VycmVudF9zaWduX2luX2lwBjsAVEki\nDjEyNy4wLjAuMQY7AFRJIhRsYXN0X3NpZ25faW5faXAGOwBUSSIOMTI3LjAu\nMC4xBjsAVEkiD2NyZWF0ZWRfYXQGOwBUSXU7Eg2KjRzAAADQsgY7E0kiCFVU\nQwY7AFRJIg91cGRhdGVkX2F0BjsAVEl1OxINyo0cwAAAYIgGOxNJIghVVEMG\nOwBUOhtAY29sdW1uX3R5cGVzX292ZXJyaWRlMDoSQGNvbHVtbl90eXBlc3sS\nSSIHaWQGOwBUbzo8QWN0aXZlUmVjb3JkOjpDb25uZWN0aW9uQWRhcHRlcnM6\nOk15c3FsMkFkYXB0ZXI6OkNvbHVtbhM6DEBzdHJpY3RUOg9AY29sbGF0aW9u\nMDoLQGV4dHJhSSITYXV0b19pbmNyZW1lbnQGOwBUOgpAbmFtZUkiB2lkBjsA\nVDoOQHNxbF90eXBlSSIMaW50KDExKQY7AFQ6CkBudWxsRjoLQGxpbWl0aQk6\nD0BwcmVjaXNpb24wOgtAc2NhbGUwOgpAdHlwZToMaW50ZWdlcjoNQGRlZmF1\nbHQwOhZAZGVmYXVsdF9mdW5jdGlvbjA6DUBwcmltYXJ5VDoLQGNvZGVyMEki\nCmVtYWlsBjsAVG87FhM7F1Q7GEkiFHV0ZjhfdW5pY29kZV9jaQY7AFQ7GUki\nAAY7AFQ7GkkiCmVtYWlsBjsAVDsbSSIRdmFyY2hhcigyNTUpBjsAVDscRjsd\naQH/Ox4wOx8wOyA6C3N0cmluZzsiSSIABjsAVDsjMDskRjslMEkiF2VuY3J5\ncHRlZF9wYXNzd29yZAY7AFRvOxYTOxdUOxhJIhR1dGY4X3VuaWNvZGVfY2kG\nOwBUOxlJIgAGOwBUOxpJIhdlbmNyeXB0ZWRfcGFzc3dvcmQGOwBUOxtJIhF2\nYXJjaGFyKDI1NSkGOwBUOxxGOx1pAf87HjA7HzA7IDsmOyJJIgAGOwBUOyMw\nOyRGOyUwSSIZcmVzZXRfcGFzc3dvcmRfdG9rZW4GOwBUbzsWEzsXVDsYSSIU\ndXRmOF91bmljb2RlX2NpBjsAVDsZSSIABjsAVDsaSSIZcmVzZXRfcGFzc3dv\ncmRfdG9rZW4GOwBUOxtJIhF2YXJjaGFyKDI1NSkGOwBUOxxUOx1pAf87HjA7\nHzA7IDsmOyIwOyMwOyRGOyUwSSIbcmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7\nAFRvOj1BY3RpdmVSZWNvcmQ6OkF0dHJpYnV0ZU1ldGhvZHM6OlRpbWVab25l\nQ29udmVyc2lvbjo6VHlwZQY6DEBjb2x1bW5vOxYTOxdUOxgwOxlJIgAGOwBU\nOxpJIhtyZXNldF9wYXNzd29yZF9zZW50X2F0BjsAVDsbSSINZGF0ZXRpbWUG\nOwBUOxxUOx0wOx4wOx8wOyA6DWRhdGV0aW1lOyIwOyMwOyRGOyUwSSIYcmVt\nZW1iZXJfY3JlYXRlZF9hdAY7AFRvOycGOyhvOxYTOxdUOxgwOxlJIgAGOwBU\nOxpJIhhyZW1lbWJlcl9jcmVhdGVkX2F0BjsAVDsbSSINZGF0ZXRpbWUGOwBU\nOxxUOx0wOx4wOx8wOyA7KTsiMDsjMDskRjslMEkiEnNpZ25faW5fY291bnQG\nOwBUbzsWEzsXVDsYMDsZSSIABjsAVDsaSSISc2lnbl9pbl9jb3VudAY7AFQ7\nG0kiDGludCgxMSkGOwBUOxxGOx1pCTseMDsfMDsgOyE7ImkAOyMwOyRGOyUw\nSSIXY3VycmVudF9zaWduX2luX2F0BjsAVG87JwY7KG87FhM7F1Q7GDA7GUki\nAAY7AFQ7GkkiF2N1cnJlbnRfc2lnbl9pbl9hdAY7AFQ7G0kiDWRhdGV0aW1l\nBjsAVDscVDsdMDseMDsfMDsgOyk7IjA7IzA7JEY7JTBJIhRsYXN0X3NpZ25f\naW5fYXQGOwBUbzsnBjsobzsWEzsXVDsYMDsZSSIABjsAVDsaSSIUbGFzdF9z\naWduX2luX2F0BjsAVDsbSSINZGF0ZXRpbWUGOwBUOxxUOx0wOx4wOx8wOyA7\nKTsiMDsjMDskRjslMEkiF2N1cnJlbnRfc2lnbl9pbl9pcAY7AFRvOxYTOxdU\nOxhJIhR1dGY4X3VuaWNvZGVfY2kGOwBUOxlJIgAGOwBUOxpJIhdjdXJyZW50\nX3NpZ25faW5faXAGOwBUOxtJIhF2YXJjaGFyKDI1NSkGOwBUOxxUOx1pAf87\nHjA7HzA7IDsmOyIwOyMwOyRGOyUwSSIUbGFzdF9zaWduX2luX2lwBjsAVG87\nFhM7F1Q7GEkiFHV0ZjhfdW5pY29kZV9jaQY7AFQ7GUkiAAY7AFQ7GkkiFGxh\nc3Rfc2lnbl9pbl9pcAY7AFQ7G0kiEXZhcmNoYXIoMjU1KQY7AFQ7HFQ7HWkB\n/zseMDsfMDsgOyY7IjA7IzA7JEY7JTBJIg9jcmVhdGVkX2F0BjsAVG87JwY7\nKG87FhM7F1Q7GDA7GUkiAAY7AFQ7GkkiD2NyZWF0ZWRfYXQGOwBUOxtJIg1k\nYXRldGltZQY7AFQ7HFQ7HTA7HjA7HzA7IDspOyIwOyMwOyRGOyUwSSIPdXBk\nYXRlZF9hdAY7AFRvOycGOyhvOxYTOxdUOxgwOxlJIgAGOwBUOxpJIg91cGRh\ndGVkX2F0BjsAVDsbSSINZGF0ZXRpbWUGOwBUOxxUOx0wOx4wOx8wOyA7KTsi\nMDsjMDskRjslMDoXQGFnZ3JlZ2F0aW9uX2NhY2hlewA6F0Bhc3NvY2lhdGlv\nbl9jYWNoZXsGOgtzY29yZXNVOjNBY3RpdmVSZWNvcmQ6OkFzc29jaWF0aW9u\nczo6SGFzTWFueUFzc29jaWF0aW9uWwc7LFsMWwc6C0Bvd25lckAyWwc6DEBs\nb2FkZWRGWwc6DEB0YXJnZXRbAFsHOhFAc3RhbGVfc3RhdGUwWwc6DkBpbnZl\ncnNlZEZbBzoXQGFzc29jaWF0aW9uX3Njb3Blbzo4QWN0aXZlUmVjb3JkOjpS\nZWxhdGlvbjo6QWN0aXZlUmVjb3JkX1JlbGF0aW9uX1Njb3JlFDoLQGtsYXNz\nYwpTY29yZToLQHRhYmxlbzoQQXJlbDo6VGFibGULOxpJIgtzY29yZXMGOwBU\nOgxAZW5naW5lQAGkOg1AY29sdW1uczA6DUBhbGlhc2VzWwA6EUB0YWJsZV9h\nbGlhczA6EUBwcmltYXJ5X2tleTA6DEB2YWx1ZXN7CDoOZXh0ZW5kaW5nWwA6\nCWJpbmRbBlsHbzsWEzsXVDsYMDsZSSIABjsAVDsaSSIOcGxheWVyX2lkBjsA\nVDsbSSIMaW50KDExKQY7AFQ7HFQ7HWkJOx4wOx8wOyA7ITsiMDsjMDskMDsl\nMGkHOgp3aGVyZVsGbzoaQXJlbDo6Tm9kZXM6OkVxdWFsaXR5BzoKQGxlZnRT\nOiBBcmVsOjpBdHRyaWJ1dGVzOjpBdHRyaWJ1dGUHOg1yZWxhdGlvbm87Nws7\nGkABpjs4YxdBY3RpdmVSZWNvcmQ6OkJhc2U7OTA7OlsAOzswOzwwOgluYW1l\nSSIOcGxheWVyX2lkBjsARjoLQHJpZ2h0SUM6G0FyZWw6Ok5vZGVzOjpCaW5k\nUGFyYW0iBj8GOwBUOhdAaW1wbGljaXRfcmVhZG9ubHkwOy8wOhRAZGVmYXVs\ndF9zY29wZWRGOgpAYXJlbG86GEFyZWw6OlNlbGVjdE1hbmFnZXIIOzhAAaQ6\nCUBjdHhvOhxBcmVsOjpOb2Rlczo6U2VsZWN0Q29yZQ06DEBzb3VyY2VvOhxB\ncmVsOjpOb2Rlczo6Sm9pblNvdXJjZQc7QkABpTtGWwA6CUB0b3AwOhRAc2V0\nX3F1YW50aWZpZXIwOhFAcHJvamVjdGlvbnNbBlM7Qwc7REABpTtFSUM6HEFy\nZWw6Ok5vZGVzOjpTcWxMaXRlcmFsIgYqBjsAVDoMQHdoZXJlc1sGbzoVQXJl\nbDo6Tm9kZXM6OkFuZAY6DkBjaGlsZHJlblsGQAGxOgxAZ3JvdXBzWwA6DEBo\nYXZpbmcwOg1Ad2luZG93c1sAOglAYXN0bzohQXJlbDo6Tm9kZXM6OlNlbGVj\ndFN0YXRlbWVudAs6C0Bjb3Jlc1sGQAG5OgxAb3JkZXJzWwA7HTA6CkBsb2Nr\nMDoMQG9mZnNldDA6CkB3aXRoMDoWQHNjb3BlX2Zvcl9jcmVhdGUwOhJAb3Jk\nZXJfY2xhdXNlMDoMQHRvX3NxbDA6CkBsYXN0MDoLQGZpcnN0MDoVQGpvaW5f\nZGVwZW5kZW5jeTA6F0BzaG91bGRfZWFnZXJfbG9hZDA6DUByZWNvcmRzWwBb\nBzoLQHByb3h5bzphQWN0aXZlUmVjb3JkOjpBc3NvY2lhdGlvbnM6OkNvbGxl\nY3Rpb25Qcm94eTo6QWN0aXZlUmVjb3JkX0Fzc29jaWF0aW9uc19Db2xsZWN0\naW9uUHJveHlfU2NvcmUNOhFAYXNzb2NpYXRpb25AAZk7NUABpDs2QAGlOz17\nCjtAWwZAAbE7P1sGQAGrOglmcm9tMDoJbG9jazA6EnJldmVyc2Vfb3JkZXIw\nO0gwOy9GO0lUO0pvO0sIOzhAAaQ7TG87TQ07Tm87Twc7QkABpTtGWwA7UDA7\nUTA7UlsGUztDBztEQAGlO0VJQztTIgYqBjsAVDtUWwZvO1UGO1ZbBkABsTtX\nWwA7WDA7WVsAO1pvO1sLO1xbBkABzjtdWwA7HTA7XjA7XzA7YDA6FkBhdHRy\naWJ1dGVzX2NhY2hlewhJIhdlbmNyeXB0ZWRfcGFzc3dvcmQGOwBUQDhJIgdp\nZAY7AFRpB0kiCmVtYWlsBjsAVEA2OhhAcHJldmlvdXNseV9jaGFuZ2VkewA6\nGEBjaGFuZ2VkX2F0dHJpYnV0ZXN7ADoOQHJlYWRvbmx5RjoPQGRlc3Ryb3ll\nZEY6HEBtYXJrZWRfZm9yX2Rlc3RydWN0aW9uRjoeQGRlc3Ryb3llZF9ieV9h\nc3NvY2lhdGlvbjA6EEBuZXdfcmVjb3JkRjoJQHR4bjA6HkBfc3RhcnRfdHJh\nbnNhY3Rpb25fc3RhdGV7ADoXQHRyYW5zYWN0aW9uX3N0YXRlMDoUQHJlZmxl\nY3RzX3N0YXRlWwZGSSIQX2NzcmZfdG9rZW4GOwBGSSIxYVVSbElaK3lzNHJ5\nR2dra2lWVEhWUzYwTXo1YUZsU0kxNVZ2bnJHVjV0dz0GOwBG\n', `updated_at` = '2014-04-14 10:34:07' WHERE `sessions`.`id` = 16[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/10.png" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:34:07 -0400
+
+
+Started GET "/hangman/topscore" for 127.0.0.1 at 2014-04-14 06:38:35 -0400
+Processing by HangmanController#topscore as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.5ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.5ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (3.9ms)[0m  [1mSELECT email,sum(win),sum(lost) FROM scores s INNER JOIN players p on p.id=s.player_id group by player_id order by sum(win) desc,sum(lost) asc[0m
+  Rendered hangman/topscore.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 108ms (Views: 98.4ms | ActiveRecord: 4.9ms)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE `sessions` SET `data` = 'BAh7CEkiG3dhcmRlbi51c2VyLnBsYXllci5rZXkGOgZFVFsHWwZpB0kiIiQy\nYSQxMCRPNS94ZWxwVGFFZlhzdVZSclFoLkNPBjsAVEkiCWdhbWUGOwBGbzoM\nSGFuZ21hbgs6DEBhbnN3ZXIiDGRlc2t0b3A6EEBtYXNrZWRXb3JkSSIMX19f\nX19fXwY7AFQ6D0Btb3Zlc0xlZnRpDzoMQHN0YXR1c0kiDHBsYXlpbmcGOwBU\nOhFAbGV0dGVyc0xlZnRvOghTZXQGOgpAaGFzaHsfSSIGYQY7AFRUSSIGYgY7\nAFRUSSIGYwY7AFRUSSIGZAY7AFRUSSIGZQY7AFRUSSIGZgY7AFRUSSIGZwY7\nAFRUSSIGaAY7AFRUSSIGaQY7AFRUSSIGagY7AFRUSSIGawY7AFRUSSIGbAY7\nAFRUSSIGbQY7AFRUSSIGbgY7AFRUSSIGbwY7AFRUSSIGcAY7AFRUSSIGcQY7\nAFRUSSIGcgY7AFRUSSIGcwY7AFRUSSIGdAY7AFRUSSIGdQY7AFRUSSIGdgY7\nAFRUSSIGdwY7AFRUSSIGeAY7AFRUSSIGeQY7AFRUSSIGegY7AFRUOgxAcGxh\neWVybzoLUGxheWVyFjoQQGF0dHJpYnV0ZXN7EkkiB2lkBjsAVGkHSSIKZW1h\naWwGOwBUSSIXaWx5YTExMTNAZ21haWwuY29tBjsAVEkiF2VuY3J5cHRlZF9w\nYXNzd29yZAY7AFRJIkEkMmEkMTAkTzUveGVscFRhRWZYc3VWUnJRaC5DT2Rq\nQnhSakhTNzEub1ZXS1ljMTNHLi5iSWIwbFBtbW0GOwBUSSIZcmVzZXRfcGFz\nc3dvcmRfdG9rZW4GOwBUMEkiG3Jlc2V0X3Bhc3N3b3JkX3NlbnRfYXQGOwBU\nMEkiGHJlbWVtYmVyX2NyZWF0ZWRfYXQGOwBUMEkiEnNpZ25faW5fY291bnQG\nOwBUaQ5JIhdjdXJyZW50X3NpZ25faW5fYXQGOwBUSXU6CVRpbWUNyo0cwAAA\nYIgGOgl6b25lSSIIVVRDBjsAVEkiFGxhc3Rfc2lnbl9pbl9hdAY7AFRJdTsR\nDcqNHMAAAICHBjsSSSIIVVRDBjsAVEkiF2N1cnJlbnRfc2lnbl9pbl9pcAY7\nAFRJIg4xMjcuMC4wLjEGOwBUSSIUbGFzdF9zaWduX2luX2lwBjsAVEkiDjEy\nNy4wLjAuMQY7AFRJIg9jcmVhdGVkX2F0BjsAVEl1OxENio0cwAAA0LIGOxJJ\nIghVVEMGOwBUSSIPdXBkYXRlZF9hdAY7AFRJdTsRDcqNHMAAAGCIBjsSSSII\nVVRDBjsAVDobQGNvbHVtbl90eXBlc19vdmVycmlkZTA6EkBjb2x1bW5fdHlw\nZXN7EkkiB2lkBjsAVG86PEFjdGl2ZVJlY29yZDo6Q29ubmVjdGlvbkFkYXB0\nZXJzOjpNeXNxbDJBZGFwdGVyOjpDb2x1bW4TOgxAc3RyaWN0VDoPQGNvbGxh\ndGlvbjA6C0BleHRyYUkiE2F1dG9faW5jcmVtZW50BjsAVDoKQG5hbWVJIgdp\nZAY7AFQ6DkBzcWxfdHlwZUkiDGludCgxMSkGOwBUOgpAbnVsbEY6C0BsaW1p\ndGkJOg9AcHJlY2lzaW9uMDoLQHNjYWxlMDoKQHR5cGU6DGludGVnZXI6DUBk\nZWZhdWx0MDoWQGRlZmF1bHRfZnVuY3Rpb24wOg1AcHJpbWFyeVQ6C0Bjb2Rl\ncjBJIgplbWFpbAY7AFRvOxUTOxZUOxdJIhR1dGY4X3VuaWNvZGVfY2kGOwBU\nOxhJIgAGOwBUOxlJIgplbWFpbAY7AFQ7GkkiEXZhcmNoYXIoMjU1KQY7AFQ7\nG0Y7HGkB/zsdMDseMDsfOgtzdHJpbmc7IUkiAAY7AFQ7IjA7I0Y7JDBJIhdl\nbmNyeXB0ZWRfcGFzc3dvcmQGOwBUbzsVEzsWVDsXSSIUdXRmOF91bmljb2Rl\nX2NpBjsAVDsYSSIABjsAVDsZSSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVDsa\nSSIRdmFyY2hhcigyNTUpBjsAVDsbRjscaQH/Ox0wOx4wOx87JTshSSIABjsA\nVDsiMDsjRjskMEkiGXJlc2V0X3Bhc3N3b3JkX3Rva2VuBjsAVG87FRM7FlQ7\nF0kiFHV0ZjhfdW5pY29kZV9jaQY7AFQ7GEkiAAY7AFQ7GUkiGXJlc2V0X3Bh\nc3N3b3JkX3Rva2VuBjsAVDsaSSIRdmFyY2hhcigyNTUpBjsAVDsbVDscaQH/\nOx0wOx4wOx87JTshMDsiMDsjRjskMEkiG3Jlc2V0X3Bhc3N3b3JkX3NlbnRf\nYXQGOwBUbzo9QWN0aXZlUmVjb3JkOjpBdHRyaWJ1dGVNZXRob2RzOjpUaW1l\nWm9uZUNvbnZlcnNpb246OlR5cGUGOgxAY29sdW1ubzsVEzsWVDsXMDsYSSIA\nBjsAVDsZSSIbcmVzZXRfcGFzc3dvcmRfc2VudF9hdAY7AFQ7GkkiDWRhdGV0\naW1lBjsAVDsbVDscMDsdMDseMDsfOg1kYXRldGltZTshMDsiMDsjRjskMEki\nGHJlbWVtYmVyX2NyZWF0ZWRfYXQGOwBUbzsmBjsnbzsVEzsWVDsXMDsYSSIA\nBjsAVDsZSSIYcmVtZW1iZXJfY3JlYXRlZF9hdAY7AFQ7GkkiDWRhdGV0aW1l\nBjsAVDsbVDscMDsdMDseMDsfOyg7ITA7IjA7I0Y7JDBJIhJzaWduX2luX2Nv\ndW50BjsAVG87FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiEnNpZ25faW5fY291bnQG\nOwBUOxpJIgxpbnQoMTEpBjsAVDsbRjscaQk7HTA7HjA7HzsgOyFpADsiMDsj\nRjskMEkiF2N1cnJlbnRfc2lnbl9pbl9hdAY7AFRvOyYGOydvOxUTOxZUOxcw\nOxhJIgAGOwBUOxlJIhdjdXJyZW50X3NpZ25faW5fYXQGOwBUOxpJIg1kYXRl\ndGltZQY7AFQ7G1Q7HDA7HTA7HjA7HzsoOyEwOyIwOyNGOyQwSSIUbGFzdF9z\naWduX2luX2F0BjsAVG87JgY7J287FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiFGxh\nc3Rfc2lnbl9pbl9hdAY7AFQ7GkkiDWRhdGV0aW1lBjsAVDsbVDscMDsdMDse\nMDsfOyg7ITA7IjA7I0Y7JDBJIhdjdXJyZW50X3NpZ25faW5faXAGOwBUbzsV\nEzsWVDsXSSIUdXRmOF91bmljb2RlX2NpBjsAVDsYSSIABjsAVDsZSSIXY3Vy\ncmVudF9zaWduX2luX2lwBjsAVDsaSSIRdmFyY2hhcigyNTUpBjsAVDsbVDsc\naQH/Ox0wOx4wOx87JTshMDsiMDsjRjskMEkiFGxhc3Rfc2lnbl9pbl9pcAY7\nAFRvOxUTOxZUOxdJIhR1dGY4X3VuaWNvZGVfY2kGOwBUOxhJIgAGOwBUOxlJ\nIhRsYXN0X3NpZ25faW5faXAGOwBUOxpJIhF2YXJjaGFyKDI1NSkGOwBUOxtU\nOxxpAf87HTA7HjA7HzslOyEwOyIwOyNGOyQwSSIPY3JlYXRlZF9hdAY7AFRv\nOyYGOydvOxUTOxZUOxcwOxhJIgAGOwBUOxlJIg9jcmVhdGVkX2F0BjsAVDsa\nSSINZGF0ZXRpbWUGOwBUOxtUOxwwOx0wOx4wOx87KDshMDsiMDsjRjskMEki\nD3VwZGF0ZWRfYXQGOwBUbzsmBjsnbzsVEzsWVDsXMDsYSSIABjsAVDsZSSIP\ndXBkYXRlZF9hdAY7AFQ7GkkiDWRhdGV0aW1lBjsAVDsbVDscMDsdMDseMDsf\nOyg7ITA7IjA7I0Y7JDA6F0BhZ2dyZWdhdGlvbl9jYWNoZXsAOhdAYXNzb2Np\nYXRpb25fY2FjaGV7BjoLc2NvcmVzVTozQWN0aXZlUmVjb3JkOjpBc3NvY2lh\ndGlvbnM6Okhhc01hbnlBc3NvY2lhdGlvblsHOytbDFsHOgtAb3duZXJAK1sH\nOgxAbG9hZGVkRlsHOgxAdGFyZ2V0WwBbBzoRQHN0YWxlX3N0YXRlMFsHOg5A\naW52ZXJzZWRGWwc6F0Bhc3NvY2lhdGlvbl9zY29wZW86OEFjdGl2ZVJlY29y\nZDo6UmVsYXRpb246OkFjdGl2ZVJlY29yZF9SZWxhdGlvbl9TY29yZRQ6C0Br\nbGFzc2MKU2NvcmU6C0B0YWJsZW86EEFyZWw6OlRhYmxlCzsZSSILc2NvcmVz\nBjsAVDoMQGVuZ2luZUABnToNQGNvbHVtbnMwOg1AYWxpYXNlc1sAOhFAdGFi\nbGVfYWxpYXMwOhFAcHJpbWFyeV9rZXkwOgxAdmFsdWVzewg6DmV4dGVuZGlu\nZ1sAOgliaW5kWwZbB287FRM7FlQ7FzA7GEkiAAY7AFQ7GUkiDnBsYXllcl9p\nZAY7AFQ7GkkiDGludCgxMSkGOwBUOxtUOxxpCTsdMDseMDsfOyA7ITA7IjA7\nIzA7JDBpBzoKd2hlcmVbBm86GkFyZWw6Ok5vZGVzOjpFcXVhbGl0eQc6CkBs\nZWZ0UzogQXJlbDo6QXR0cmlidXRlczo6QXR0cmlidXRlBzoNcmVsYXRpb25v\nOzYLOxlAAZ87N2MXQWN0aXZlUmVjb3JkOjpCYXNlOzgwOzlbADs6MDs7MDoJ\nbmFtZUkiDnBsYXllcl9pZAY7AEY6C0ByaWdodElDOhtBcmVsOjpOb2Rlczo6\nQmluZFBhcmFtIgY/BjsAVDoXQGltcGxpY2l0X3JlYWRvbmx5MDsuMDoUQGRl\nZmF1bHRfc2NvcGVkRjoKQGFyZWxvOhhBcmVsOjpTZWxlY3RNYW5hZ2VyCDs3\nQAGdOglAY3R4bzocQXJlbDo6Tm9kZXM6OlNlbGVjdENvcmUNOgxAc291cmNl\nbzocQXJlbDo6Tm9kZXM6OkpvaW5Tb3VyY2UHO0FAAZ47RVsAOglAdG9wMDoU\nQHNldF9xdWFudGlmaWVyMDoRQHByb2plY3Rpb25zWwZTO0IHO0NAAZ47RElD\nOhxBcmVsOjpOb2Rlczo6U3FsTGl0ZXJhbCIGKgY7AFQ6DEB3aGVyZXNbBm86\nFUFyZWw6Ok5vZGVzOjpBbmQGOg5AY2hpbGRyZW5bBkABqjoMQGdyb3Vwc1sA\nOgxAaGF2aW5nMDoNQHdpbmRvd3NbADoJQGFzdG86IUFyZWw6Ok5vZGVzOjpT\nZWxlY3RTdGF0ZW1lbnQLOgtAY29yZXNbBkABsjoMQG9yZGVyc1sAOxwwOgpA\nbG9jazA6DEBvZmZzZXQwOgpAd2l0aDA6FkBzY29wZV9mb3JfY3JlYXRlMDoS\nQG9yZGVyX2NsYXVzZTA6DEB0b19zcWwwOgpAbGFzdDA6C0BmaXJzdDA6FUBq\nb2luX2RlcGVuZGVuY3kwOhdAc2hvdWxkX2VhZ2VyX2xvYWQwOg1AcmVjb3Jk\nc1sAWwc6C0Bwcm94eW86YUFjdGl2ZVJlY29yZDo6QXNzb2NpYXRpb25zOjpD\nb2xsZWN0aW9uUHJveHk6OkFjdGl2ZVJlY29yZF9Bc3NvY2lhdGlvbnNfQ29s\nbGVjdGlvblByb3h5X1Njb3JlDToRQGFzc29jaWF0aW9uQAGSOzRAAZ07NUAB\nnjs8ewo7P1sGQAGqOz5bBkABpDoJZnJvbTA6CWxvY2swOhJyZXZlcnNlX29y\nZGVyMDtHMDsuRjtIVDtJbztKCDs3QAGdO0tvO0wNO01vO04HO0FAAZ47RVsA\nO08wO1AwO1FbBlM7Qgc7Q0ABnjtESUM7UiIGKgY7AFQ7U1sGbztUBjtVWwZA\nAao7VlsAO1cwO1hbADtZbztaCztbWwZAAcc7XFsAOxwwO10wO14wO18wOhZA\nYXR0cmlidXRlc19jYWNoZXsISSIXZW5jcnlwdGVkX3Bhc3N3b3JkBjsAVEAx\nSSIHaWQGOwBUaQdJIgplbWFpbAY7AFRALzoYQHByZXZpb3VzbHlfY2hhbmdl\nZHsAOhhAY2hhbmdlZF9hdHRyaWJ1dGVzewA6DkByZWFkb25seUY6D0BkZXN0\ncm95ZWRGOhxAbWFya2VkX2Zvcl9kZXN0cnVjdGlvbkY6HkBkZXN0cm95ZWRf\nYnlfYXNzb2NpYXRpb24wOhBAbmV3X3JlY29yZEY6CUB0eG4wOh5AX3N0YXJ0\nX3RyYW5zYWN0aW9uX3N0YXRlewA6F0B0cmFuc2FjdGlvbl9zdGF0ZTA6FEBy\nZWZsZWN0c19zdGF0ZVsGRkkiEF9jc3JmX3Rva2VuBjsARkkiMWFVUmxJWit5\nczRyeUdna2tpVlRIVlM2ME16NWFGbFNJMTVWdm5yR1Y1dHc9BjsARg==\n', `updated_at` = '2014-04-14 10:38:35' WHERE `sessions`.`id` = 16[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:38:36 -0400
+
+
+Started GET "/hangman/topscore" for 127.0.0.1 at 2014-04-14 06:40:14 -0400
+Processing by HangmanController#topscore as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.8ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (1.0ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT email,sum(win),sum(lost) FROM scores s INNER JOIN players p on p.id=s.player_id group by player_id order by sum(win) desc,sum(lost) asc[0m
+  Rendered hangman/topscore.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 130ms (Views: 120.9ms | ActiveRecord: 2.6ms)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:15 -0400
+
+
+Started GET "/hangman/topscore" for 127.0.0.1 at 2014-04-14 06:40:26 -0400
+Processing by HangmanController#topscore as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.6ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.6ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT email,sum(win),sum(lost) FROM scores s INNER JOIN players p on p.id=s.player_id group by player_id order by sum(win) desc,sum(lost) asc
+  Rendered hangman/topscore.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 128ms (Views: 122.6ms | ActiveRecord: 1.8ms)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:40:27 -0400
+
+
+Started GET "/hangman/topscore" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+Processing by HangmanController#topscore as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (0.7ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mSELECT email,sum(win),sum(lost) FROM scores s INNER JOIN players p on p.id=s.player_id group by player_id order by sum(win) desc,sum(lost) asc[0m
+  Rendered hangman/topscore.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 128ms (Views: 119.5ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:23 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:24 -0400
+
+
+Started GET "/hangman/topscore" for 127.0.0.1 at 2014-04-14 06:41:48 -0400
+Processing by HangmanController#topscore as HTML
+  [1m[35mActiveRecord::SessionStore::Session Load (0.8ms)[0m  SELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1
+  [1m[36mPlayer Load (0.8ms)[0m  [1mSELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT email,sum(win),sum(lost) FROM scores s INNER JOIN players p on p.id=s.player_id group by player_id order by sum(win) desc,sum(lost) asc
+  Rendered hangman/topscore.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 117ms (Views: 109.6ms | ActiveRecord: 2.4ms)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:41:49 -0400
+
+
+Started GET "/hangman/topscore" for 127.0.0.1 at 2014-04-14 06:42:29 -0400
+Processing by HangmanController#topscore as HTML
+  [1m[36mActiveRecord::SessionStore::Session Load (1.1ms)[0m  [1mSELECT `sessions`.* FROM `sessions` WHERE `sessions`.`session_id` = '32683560225854e2342337190b152e6f' ORDER BY `sessions`.`id` ASC LIMIT 1[0m
+  [1m[35mPlayer Load (0.6ms)[0m  SELECT `players`.* FROM `players` WHERE `players`.`id` = 2 ORDER BY `players`.`id` ASC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT email,sum(win),sum(lost) FROM scores s INNER JOIN players p on p.id=s.player_id group by player_id order by sum(win) desc,sum(lost) asc[0m
+  Rendered hangman/topscore.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 117ms (Views: 108.8ms | ActiveRecord: 2.4ms)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation.css?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/hangmanProxy.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/hangman.css?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.accordion.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/hangmanView.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.abide.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.dropdown.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.clearing.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.offcanvas.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.interchange.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.orbit.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.magellan.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.joyride.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.reveal.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.tab.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.tooltip.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.topbar.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.equalizer.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/hangmanApp.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation/foundation.alert.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/foundation.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-14 06:42:30 -0400
