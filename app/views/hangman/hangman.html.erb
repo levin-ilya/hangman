@@ -6,7 +6,7 @@
 <div id="mainGame" ng-controller="HangmanController">
   <!-- Image found here: http://top.trnd.com/category/computerinternet/page/40/ -->
   <div id="outerHangmanImage">
-    <img id="hangmanImage" class="thinBorder" ng-src="../assets/{{hangman.movesLeft}}.png" >
+    <img id="hangmanImage" class="thinBorder" ng-src="../assets/{{hangman.movesLeft || 10}}.png" >
   </div>
 
   <ul id="movesLeft" class="breadcrumbs">

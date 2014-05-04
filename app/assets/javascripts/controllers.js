@@ -51,7 +51,7 @@ hangmanAppControllers.controller('MenuController',['$scope','$http','$location',
     $scope.newGame = function(){
         $('#winnerDisplay').foundation('reveal', 'close');
         $('#lostDisplay').foundation('reveal', 'close');
-        var urlLocation = '/hangman/newgame';
+        var urlLocation = '/hangman/newgame.json';
         $http({method: 'GET', url:urlLocation }).
             success(function(data, status, headers, config) {
                 $location.path('/hangman');
