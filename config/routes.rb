@@ -1,13 +1,15 @@
 HangMan::Application.routes.draw do
-  devise_for :players
+  devise_for :players , controllers: { sessions: "player", registrations: "register"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'hangman#index'
+  root 'hangman#hangman'
   get 'hangman/guessletter/:letter' => 'hangman#guessletter'
   get 'hangman/newgame' => 'hangman#newgame'
   get 'hangman/topscore' => 'hangman#topscore'
+  get 'hangman/hangman' => 'hangman#hangman'
+  get 'hangman/templates/:id' => 'hangman#templates'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

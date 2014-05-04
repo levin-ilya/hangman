@@ -6,6 +6,9 @@ gem 'rails', '4.0.1'
 # user management
 gem 'devise'
 
+# angular - JS MVC framework
+gem 'angularjs-rails'
+
 # move session data to the database
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
