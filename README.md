@@ -1,11 +1,11 @@
 hangman
 =======
 
-Requirements
+###Requirements
  - MYSQL
  - Ruby on Rails
 
-Installation and setup
+###Installation and setup
  -   git clone (get the code)
  -   bundle install (install any missing gems)
  -   rake db:create (create database)
@@ -14,15 +14,13 @@ Installation and setup
  -   rake teaspoon (runs Javascript test)
  -   rails s (start rails dev server)
 
-
-Design
-![Design](https://raw.githubusercontent.com/levin-ilya/hangman/master/HangmanDesign.jpeg)
-
-
-Continuous Development
+###Continuous Development
  - Commits pushed to GitHub
  - Git Pull Request and testing from codeship.io
  - Should a build pass all test, code is then deployed to Heroku.
  - Working example: http://zenbuilder.co/
+
+###Design
+![Design](https://raw.githubusercontent.com/levin-ilya/hangman/master/HangmanDesign.jpeg)
 
 
