@@ -19,3 +19,10 @@ Design
 ![Design](https://raw.githubusercontent.com/levin-ilya/hangman/master/HangmanDesign.jpeg)
 
 
+Continuous Development
+ - Commits pushed to GitHub
+ - Git Pull Request and testing from codeship.io
+ - Should a build pass all test, code is then deployed to Heroku.
+ - Working example: http://zenbuilder.co/
+
+
