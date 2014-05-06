@@ -19,6 +19,7 @@ hangman
  - Git Pull Request and testing from codeship.io
  - Should a build pass all test, code is then deployed to Heroku.
  - Working example: http://zenbuilder.co/
+ - View JS Unit Test via web http://www.zenbuilder.co/teaspoon 
 
 ###Design
 ![Design](https://raw.githubusercontent.com/levin-ilya/hangman/master/HangmanDesign.jpeg)
